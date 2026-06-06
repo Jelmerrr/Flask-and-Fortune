@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8428k051oqmk"]
+
+[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="1_gfb6r"]
+
+[node name="Test Environment" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_screen = false
+
+[node name="Screen Drawer" type="Camera2D" parent="Camera2D"]
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="PlaceholderBush" type="Sprite2D" parent="."]
+position = Vector2(-57, -15)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush4" type="Sprite2D" parent="."]
+position = Vector2(-31, -49)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush5" type="Sprite2D" parent="."]
+position = Vector2(22, 29)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush7" type="Sprite2D" parent="."]
+position = Vector2(73, 17)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush6" type="Sprite2D" parent="."]
+position = Vector2(44, -54)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush2" type="Sprite2D" parent="."]
+position = Vector2(7, -76)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush8" type="Sprite2D" parent="."]
+position = Vector2(-94, -86)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush9" type="Sprite2D" parent="."]
+position = Vector2(-222, -124)
+texture = ExtResource("1_gfb6r")
+
+[node name="PlaceholderBush3" type="Sprite2D" parent="."]
+position = Vector2(63, -18)
+texture = ExtResource("1_gfb6r")

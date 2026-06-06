@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Flask and Fortune"
+run/main_scene="uid://cw6yq4gb6t4dw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
@@ -31,6 +32,10 @@ folder_colors={
 "res://Scripts/": "pink",
 "res://Shaders/": "yellow"
 }
+
+[physics]
+
+common/physics_interpolation=true
 
 [rendering]
 
