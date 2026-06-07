@@ -14,6 +14,10 @@ config/name="Flask and Fortune"
 run/main_scene="uid://cw6yq4gb6t4dw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+UtilsGlobalEnums="*res://Scripts/CoreUtils/Globals/UtilsGlobalEnums.gd"
+
 [display]
 
 window/size/viewport_width=960
