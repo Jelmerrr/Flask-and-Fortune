@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bjdbyd61u0qx2"]
+
+[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="1_y6w8a"]
+[ext_resource type="Script" uid="uid://i7xrlwuwu02f" path="res://Resources/Items/ItemResource.gd" id="2_bnubb"]
+
+[resource]
+script = ExtResource("2_bnubb")
+itemName = "Sunberry"
+itemDescription = "Sunberries can be found in bushes near the forest' edge. The sap inside this berry stimulates natural recovery of the body. Has a bitter aftertaste."
+itemTexture = ExtResource("1_y6w8a")
+metadata/_custom_type_script = "uid://i7xrlwuwu02f"

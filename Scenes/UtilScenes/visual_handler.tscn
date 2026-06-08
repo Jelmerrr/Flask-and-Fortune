@@ -6,7 +6,52 @@
 
 [node name="Visual Handler" type="Node2D"]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_iw1ln")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 71.0
+offset_right = 288.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("2_8ueo7")
+theme_override_font_sizes/font_size = 32
+text = "Hello, World!"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 100.0
+offset_right = 403.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("2_8ueo7")
+theme_override_font_sizes/font_size = 16
+text = "This is a small herb, commonly found near rivers and small bodies of water."
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,46 +62,15 @@ grow_vertical = 2
 stretch = true
 stretch_shrink = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
+physics_object_picking = true
 size = Vector2i(480, 270)
 render_target_update_mode = 4
 
-[node name="Scene Handler" type="Node2D" parent="SubViewportContainer/SubViewport"]
+[node name="Scene Handler" type="Node2D" parent="Control/SubViewportContainer/SubViewport"]
 
-[node name="Test Environment" parent="SubViewportContainer/SubViewport/Scene Handler" instance=ExtResource("1_exiw7")]
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_iw1ln")
-
-[node name="Label" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 71.0
-offset_right = 288.0
-offset_bottom = 97.0
-theme_override_fonts/font = ExtResource("2_8ueo7")
-theme_override_font_sizes/font_size = 32
-text = "Hello, World!"
-
-[node name="Label2" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = 162.0
-offset_top = 100.0
-offset_right = 403.0
-offset_bottom = 321.0
-theme_override_fonts/font = ExtResource("2_8ueo7")
-theme_override_font_sizes/font_size = 16
-text = "This is a small herb, commonly found near rivers and small bodies of water."
-autowrap_mode = 2
+[node name="Test Environment" parent="Control/SubViewportContainer/SubViewport/Scene Handler" instance=ExtResource("1_exiw7")]

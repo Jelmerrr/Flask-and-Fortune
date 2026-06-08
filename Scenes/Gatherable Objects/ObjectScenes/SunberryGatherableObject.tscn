@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8p0g5r0f2q08"]
+
+[ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_l1enj"]
+[ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_c1odu"]
+[ext_resource type="Shader" uid="uid://bhq0vwnwcxcg3" path="res://Shaders/Sprite Processing Shaders/2dOutline.gdshader" id="2_rm6tn"]
+[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="4_ls3t2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrk6t"]
+resource_local_to_scene = true
+shader = ExtResource("2_rm6tn")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/strength = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdb2t"]
+size = Vector2(28, 19)
+
+[node name="Sunberry" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_l1enj")
+gatherableData = ExtResource("2_c1odu")
+
+[node name="GatherObjectSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_vrk6t")
+texture = ExtResource("4_ls3t2")
+offset = Vector2(0, -10)
+
+[node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
+
+[node name="GatherCollisionShape" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_hdb2t")
+
+[node name="GatherDurationTimer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
+[connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]

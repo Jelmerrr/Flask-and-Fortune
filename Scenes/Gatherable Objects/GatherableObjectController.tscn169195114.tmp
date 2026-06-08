@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctyl52wfuau5g"]
+
+[ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_hdb2t"]
+[ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_f81cg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbees"]
+
+[node name="GatherableObjectController" type="Node2D"]
+script = ExtResource("1_hdb2t")
+gatherableData = ExtResource("2_f81cg")
+
+[node name="GatherObjectSprite" type="Sprite2D" parent="."]
+
+[node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
+
+[node name="GatherCollisionShape" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+shape = SubResource("RectangleShape2D_bbees")
+
+[node name="GatherDurationTimer" type="Timer" parent="."]

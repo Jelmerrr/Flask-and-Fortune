@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
-[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="1_gfb6r"]
 [ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="3_ephj6"]
 [ext_resource type="Texture2D" uid="uid://c310v47bisfne" path="res://Assets/Sprites/Item Sprites/ItemSpriteFrame32x32.png" id="3_nfcxt"]
+[ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
 
 [node name="Test Environment" type="Node2D"]
 y_sort_enabled = true
@@ -20,36 +20,6 @@ y_sort_enabled = true
 enabled = false
 zoom = Vector2(2, 2)
 
-[node name="PlaceholderBush" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-43, 0)
-texture = ExtResource("1_gfb6r")
-offset = Vector2(0, -10)
-
-[node name="PlaceholderBush2" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-30, -12)
-texture = ExtResource("1_gfb6r")
-offset = Vector2(0, -10)
-
-[node name="PlaceholderBush3" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-25, 8)
-texture = ExtResource("1_gfb6r")
-offset = Vector2(0, -10)
-
-[node name="PlaceholderBush5" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(39, 8)
-texture = ExtResource("1_gfb6r")
-offset = Vector2(0, -10)
-
-[node name="PlaceholderBush4" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-14, -21)
-texture = ExtResource("1_gfb6r")
-offset = Vector2(0, -10)
-
 [node name="ItemSpriteFrame32x32" type="Sprite2D" parent="."]
 position = Vector2(-76, -17)
 texture = ExtResource("3_nfcxt")
@@ -57,3 +27,9 @@ texture = ExtResource("3_nfcxt")
 [node name="ComfreyItemSprite32x32" type="Sprite2D" parent="."]
 position = Vector2(-76, -17)
 texture = ExtResource("3_ephj6")
+
+[node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(-34, -3)
+
+[node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(36, -3)
