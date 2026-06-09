@@ -42,9 +42,11 @@ func _input(event):
 			#gather_progress_bar.step = gather_progress_bar.max_value / 30
 			
 			UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Gathering
-			#SignalBus.Play_SFX.emit(AudioLibrary.PlantHarvesting_Loopable_01, randi_range(0, 15))
+			AudioController.PlaySFX(preload("uid://6uhxdfup02ac"), randi_range(0, 15))
 
 func _on_gather_duration_timer_timeout() -> void:
+	AudioController.PlaySFX(preload("uid://1cv8ihko1fky"), 0)
+	AudioController.StopSFX(preload("uid://6uhxdfup02ac"))
 	UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
 	GatherResource()
 

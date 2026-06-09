@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ssq6sgjwodo"]
+
+[ext_resource type="Script" uid="uid://cj83eutupn5yt" path="res://Scripts/Audio/AudioMasterController.gd" id="1_jxxma"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_jxxma")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music Master"
+
+[node name="SFX Channels" type="Node2D" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvxwurcomani"]
+
+[ext_resource type="Script" uid="uid://da6vmvfvw5a58" path="res://Scripts/Audio/SFXPlayerController.gd" id="1_4qa3t"]
+
+[node name="SFX Player" type="AudioStreamPlayer2D"]
+script = ExtResource("1_4qa3t")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

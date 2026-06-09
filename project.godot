@@ -14,10 +14,15 @@ config/name="Flask and Fortune"
 run/main_scene="uid://cw6yq4gb6t4dw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="uid://oyx42t1pgnm1"
+
 [autoload]
 
 UtilsGlobalEnums="*res://Scripts/CoreUtils/Globals/UtilsGlobalEnums.gd"
 UtilsGlobalVariables="*res://Scripts/CoreUtils/Globals/UtilsGlobalVariables.gd"
+AudioController="*res://Scenes/UtilScenes/Audio/AudioController.tscn"
 
 [display]
 
