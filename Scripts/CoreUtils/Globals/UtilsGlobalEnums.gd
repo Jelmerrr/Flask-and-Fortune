@@ -18,3 +18,9 @@ enum itemRarity{
 	Uncommon,
 	Rare,
 }
+
+enum playerState{
+	Free,
+	Gathering,
+	Crafting,
+}
