@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=6 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="3_ephj6"]
 [ext_resource type="Texture2D" uid="uid://c310v47bisfne" path="res://Assets/Sprites/Item Sprites/ItemSpriteFrame32x32.png" id="3_nfcxt"]
 [ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
+[ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
 
 [node name="Test Environment" type="Node2D"]
 y_sort_enabled = true
@@ -21,11 +22,75 @@ enabled = false
 zoom = Vector2(2, 2)
 
 [node name="ItemSpriteFrame32x32" type="Sprite2D" parent="."]
-position = Vector2(-76, -17)
+position = Vector2(-100, 118)
 texture = ExtResource("3_nfcxt")
 
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ItemSpriteFrame32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_nfcxt")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
+[node name="ComfreyItemSprite32x32" type="Sprite2D" parent="ItemSpriteFrame32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32/ComfreyItemSprite32x32"]
+position = Vector2(0, -32)
+texture = ExtResource("3_ephj6")
+
 [node name="ComfreyItemSprite32x32" type="Sprite2D" parent="."]
-position = Vector2(-76, -17)
+position = Vector2(-100, 118)
 texture = ExtResource("3_ephj6")
 
 [node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
@@ -33,3 +98,7 @@ position = Vector2(-34, -3)
 
 [node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
 position = Vector2(36, -3)
+
+[node name="ExampleStreet" type="Sprite2D" parent="."]
+position = Vector2(181, -236)
+texture = ExtResource("5_7i3ty")

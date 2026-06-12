@@ -13,6 +13,7 @@ config_version=5
 config/name="Flask and Fortune"
 run/main_scene="uid://cw6yq4gb6t4dw"
 config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://blv3c2sjdg70f"
 
 [audio]
 
