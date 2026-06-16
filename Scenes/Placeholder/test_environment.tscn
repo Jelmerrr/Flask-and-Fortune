@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="3_ephj6"]
 [ext_resource type="Texture2D" uid="uid://c310v47bisfne" path="res://Assets/Sprites/Item Sprites/ItemSpriteFrame32x32.png" id="3_nfcxt"]
 [ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
 [ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
+[ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Placeholder/HouseTestPlaceholder.png" id="6_42avm"]
 
 [node name="Test Environment" type="Node2D"]
 y_sort_enabled = true
@@ -100,5 +101,12 @@ position = Vector2(-34, -3)
 position = Vector2(36, -3)
 
 [node name="ExampleStreet" type="Sprite2D" parent="."]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(181, -236)
 texture = ExtResource("5_7i3ty")
+
+[node name="HouseTestPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(226, -101)
+texture = ExtResource("6_42avm")
+offset = Vector2(23, -161)
