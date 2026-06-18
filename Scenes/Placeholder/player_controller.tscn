@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8faxx5uxnkkb"]
+[gd_scene load_steps=6 format=3 uid="uid://b8faxx5uxnkkb"]
 
 [ext_resource type="Script" uid="uid://ysxak25d4qnd" path="res://Scripts/Player/PlayerController.gd" id="1_4r0g5"]
 [ext_resource type="Texture2D" uid="uid://dncvuejp0iy4r" path="res://Assets/Sprites/Character Sprites/PlaceholderCharacter.png" id="1_l0131"]
+[ext_resource type="Resource" uid="uid://daghgr4dl3pxr" path="res://Resources/Player/Resource Files/MainPlayerData.tres" id="2_0n270"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4r0g5"]
 animations = [{
@@ -19,6 +20,7 @@ size = Vector2(11, 7)
 
 [node name="PlayerController" type="CharacterBody2D"]
 script = ExtResource("1_4r0g5")
+playerData = ExtResource("2_0n270")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4r0g5")

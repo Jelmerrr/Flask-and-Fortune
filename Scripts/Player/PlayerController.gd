@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var playerData: PlayerData
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed = 80 #Speed in pixels/sec

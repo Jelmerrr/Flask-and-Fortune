@@ -26,14 +26,15 @@ func shuffleArray(array: Array):
 		array[j] = tmp
 	return array
 
-func weightedLootTable(lootTable: LootTableResource) -> Array[ItemResource]:
-	var result: Array[ItemResource]
+func weightedLootTable(lootTable: LootTableResource) -> Dictionary[ItemResource, int]:
+	var result: Dictionary[ItemResource, int] = {}
 	var weighting: PackedFloat32Array
 	for item in lootTable.lootTable:
 		weighting.append(item.rarityWeigth)
 	for rolls in lootTable.itemsRollAmount:
-		var rngresult = rng.rand_weighted(weighting)
-		var itemAmount = rng.randi_range(lootTable.lootTable[rngresult].amountMin, lootTable.lootTable[rngresult].amountMax)
-		for n in itemAmount:
-			result.append(lootTable.lootTable[rngresult].Item)
+		var rngResult = rng.rand_weighted(weighting)
+		if lootTable.lootTable[rngResult].Item in result:
+			result[lootTable.lootTable[rngResult].Item] += rng.randi_range(lootTable.lootTable[rngResult].amountMin, lootTable.lootTable[rngResult].amountMax)
+		else:
+			result[lootTable.lootTable[rngResult].Item] = rng.randi_range(lootTable.lootTable[rngResult].amountMin, lootTable.lootTable[rngResult].amountMax)
 	return result

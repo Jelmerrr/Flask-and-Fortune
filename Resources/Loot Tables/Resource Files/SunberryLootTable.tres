@@ -9,8 +9,8 @@
 script = ExtResource("1_333ib")
 Item = ExtResource("2_lbkma")
 rarityWeigth = 4
-amountMin = 1
-amountMax = 3
+amountMin = 2
+amountMax = 4
 metadata/_custom_type_script = "uid://dtukklmctt8ar"
 
 [sub_resource type="Resource" id="Resource_sbsxg"]

@@ -94,18 +94,6 @@ texture = ExtResource("3_ephj6")
 position = Vector2(-100, 118)
 texture = ExtResource("3_ephj6")
 
-[node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(-34, -3)
-
-[node name="Sunberry3" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(434, -285)
-
-[node name="Sunberry4" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(289, -292)
-
-[node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(36, -3)
-
 [node name="ExampleStreet" type="Sprite2D" parent="."]
 z_index = -1
 y_sort_enabled = true
@@ -116,3 +104,15 @@ texture = ExtResource("5_7i3ty")
 position = Vector2(252, -98)
 texture = ExtResource("6_42avm")
 offset = Vector2(23, -161)
+
+[node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(-34, -3)
+
+[node name="Sunberry3" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(368, -289)
+
+[node name="Sunberry4" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(289, -292)
+
+[node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(36, -3)

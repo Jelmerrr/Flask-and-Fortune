@@ -51,9 +51,9 @@ func _on_gather_duration_timer_timeout() -> void:
 	GatherResource()
 
 func GatherResource() -> void:
-	#TODO: port loottable logic
-	var gatherResult: Array[ItemResource] = UtilsRngManager.weightedLootTable(gatherableData.lootTable)
+	var gatherResult: Dictionary[ItemResource, int] = UtilsRngManager.weightedLootTable(gatherableData.lootTable)
 	for item in gatherResult:
-		print(item.itemName)
+		GlobalSignalBus.addItems.emit(item, UtilsGlobalVariables.playerDataRef.inventoryRef, gatherResult[item])
+	GlobalIventoryHandler.printInventory(UtilsGlobalVariables.playerDataRef.inventoryRef)
 	harvestable = false
 	gather_object_sprite.visible = false
