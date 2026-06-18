@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="LootTableResource" load_steps=7 format=3 uid="uid://bwjrd0nq8ggp2"]
+
+[ext_resource type="Script" uid="uid://dtukklmctt8ar" path="res://Resources/Loot Tables/LootTableEntryResource.gd" id="1_333ib"]
+[ext_resource type="Resource" uid="uid://bjdbyd61u0qx2" path="res://Resources/Items/Resource Files/SunberryItemResource.tres" id="2_lbkma"]
+[ext_resource type="Resource" uid="uid://ijdsiogsvex5" path="res://Resources/Items/Resource Files/ComfreyItemResource.tres" id="3_lbkma"]
+[ext_resource type="Script" uid="uid://c15ebidgxcou2" path="res://Resources/Loot Tables/LootTableResource.gd" id="3_sbsxg"]
+
+[sub_resource type="Resource" id="Resource_o5lye"]
+script = ExtResource("1_333ib")
+Item = ExtResource("2_lbkma")
+rarityWeigth = 4
+amountMin = 1
+amountMax = 3
+metadata/_custom_type_script = "uid://dtukklmctt8ar"
+
+[sub_resource type="Resource" id="Resource_sbsxg"]
+script = ExtResource("1_333ib")
+Item = ExtResource("3_lbkma")
+rarityWeigth = 1
+amountMin = 1
+amountMax = 2
+metadata/_custom_type_script = "uid://dtukklmctt8ar"
+
+[resource]
+script = ExtResource("3_sbsxg")
+lootTable = Array[ExtResource("1_333ib")]([SubResource("Resource_o5lye"), SubResource("Resource_sbsxg")])
+itemsRollAmount = 3
+metadata/_custom_type_script = "uid://c15ebidgxcou2"

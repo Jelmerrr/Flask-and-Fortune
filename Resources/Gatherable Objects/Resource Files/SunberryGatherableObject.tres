@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="GatherableObject" load_steps=3 format=3 uid="uid://bulky6dnsram"]
 
+[ext_resource type="Resource" uid="uid://bwjrd0nq8ggp2" path="res://Resources/Loot Tables/Resource Files/SunberryLootTable.tres" id="1_qd3l4"]
 [ext_resource type="Script" uid="uid://bsuj6lsrvy1ty" path="res://Resources/Gatherable Objects/GatherableObjectResource.gd" id="1_qpoc2"]
-[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="2_qd3l4"]
 
 [resource]
 script = ExtResource("1_qpoc2")
 objectName = "Sunberry"
 baseGatherTime = 3.0
-sprite = ExtResource("2_qd3l4")
-spriteYsortPivotOffset = 10
+lootTable = ExtResource("1_qd3l4")
 metadata/_custom_type_script = "uid://bsuj6lsrvy1ty"
