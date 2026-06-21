@@ -47,7 +47,19 @@ theme_override_font_sizes/font_size = 16
 text = "This is a small herb, commonly found near rivers and small bodies of water."
 autowrap_mode = 2
 
+[node name="Scene Handler" type="Node2D" parent="."]
+
+[node name="Test Environment" parent="Scene Handler" instance=ExtResource("1_exiw7")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Handler"]
+visible = false
+color = Color(0.24567527, 0.3414838, 0.7108614, 1)
+script = ExtResource("4_pi6qo")
+gradient = SubResource("GradientTexture1D_axpmp")
+dayDurationInSeconds = 10
+
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,15 +86,4 @@ snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
 physics_object_picking = true
 size = Vector2i(960, 540)
-render_target_update_mode = 4
-
-[node name="Scene Handler" type="Node2D" parent="Control/SubViewportContainer/SubViewport"]
-
-[node name="Test Environment" parent="Control/SubViewportContainer/SubViewport/Scene Handler" instance=ExtResource("1_exiw7")]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Control/SubViewportContainer/SubViewport/Scene Handler"]
-visible = false
-color = Color(0.24567527, 0.3414838, 0.7108614, 1)
-script = ExtResource("4_pi6qo")
-gradient = SubResource("GradientTexture1D_axpmp")
-dayDurationInSeconds = 10
+render_target_update_mode = 0
