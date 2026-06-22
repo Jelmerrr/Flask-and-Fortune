@@ -16,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0n270"]
-size = Vector2(11, 7)
+size = Vector2(14, 7)
 
 [node name="PlayerController" type="CharacterBody2D"]
 script = ExtResource("1_4r0g5")
@@ -27,5 +27,5 @@ sprite_frames = SubResource("SpriteFrames_4r0g5")
 offset = Vector2(0, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -3.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_0n270")

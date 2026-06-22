@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://hiwkpj110h6r"]
+
+[ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Placeholder/HouseTestPlaceholder.png" id="1_82t48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82t48"]
+size = Vector2(149, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0prc"]
+size = Vector2(97, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg3tk"]
+size = Vector2(40, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sidx1"]
+size = Vector2(6, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wcm2"]
+size = Vector2(16, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_traf3"]
+size = Vector2(6, 10)
+
+[node name="Player Atelier" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 149)
+texture = ExtResource("1_82t48")
+offset = Vector2(0, -149)
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-85.5, 81)
+shape = SubResource("RectangleShape2D_82t48")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(94.5, 102)
+shape = SubResource("RectangleShape2D_l0prc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(163, 108)
+shape = SubResource("RectangleShape2D_vg3tk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(146, 49)
+shape = SubResource("RectangleShape2D_sidx1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(175, 157)
+shape = SubResource("RectangleShape2D_7wcm2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(146, 157)
+shape = SubResource("RectangleShape2D_traf3")
