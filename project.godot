@@ -27,6 +27,7 @@ AudioController="*res://Scenes/UtilScenes/Audio/AudioController.tscn"
 UtilsRngManager="*res://Scripts/CoreUtils/Globals/UtilsRNGManager.gd"
 GlobalSignalBus="*res://Scripts/CoreUtils/Globals/GlobalSignalBus.gd"
 GlobalIventoryHandler="*res://Scripts/Inventory/GlobalIventoryHandler.gd"
+GlobalCraftingHandler="*res://Scripts/Crafting/GlobalCraftingHandler.gd"
 
 [display]
 
