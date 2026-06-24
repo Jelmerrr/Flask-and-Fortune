@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bjdbyd61u0qx2" path="res://Resources/Items/Resource Files/SunberryItemResource.tres" id="3_re2h3"]
 [ext_resource type="Script" uid="uid://c1khi8bu25ddu" path="res://Resources/Crafting/Dependencies/CraftingMethods.gd" id="4_4sa7k"]
 [ext_resource type="Script" uid="uid://dtukklmctt8ar" path="res://Resources/Loot Tables/LootTableEntryResource.gd" id="5_40ucp"]
-[ext_resource type="Resource" uid="uid://bic5busq6fm2s" path="res://Resources/Items/Resource Files/BasicHealingPotionItemResource.tres" id="6_ff8ii"]
+[ext_resource type="Resource" uid="uid://bic5busq6fm2s" path="res://Resources/Items/Resource Files/LesserHealingPotionItemResource.tres" id="6_ff8ii"]
 [ext_resource type="Script" uid="uid://c15ebidgxcou2" path="res://Resources/Loot Tables/LootTableResource.gd" id="7_1fre2"]
 [ext_resource type="Script" uid="uid://b4j46djuvus1" path="res://Resources/Crafting/Results/CraftingRecipeResult.gd" id="8_ke53o"]
 [ext_resource type="Script" uid="uid://c52j37j7dsrdw" path="res://Resources/Crafting/Recipes/CraftingRecipe.gd" id="9_gsix5"]

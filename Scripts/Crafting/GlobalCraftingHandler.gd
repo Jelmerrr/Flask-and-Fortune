@@ -14,7 +14,7 @@ func craftItem(recipe: CraftingRecipe) -> void:
 			useItems(recipe)
 			giveResults(recipe)
 			UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
-			print("Items crafted:")
+			#print("Items crafted:")
 			#for slot in recipe.results.mainResults:
 				#print(str(slot.item.name) + " " + str(slot.amount) + "x")
 			GlobalIventoryHandler.printInventory(UtilsGlobalVariables.playerDataRef.inventoryRef)
