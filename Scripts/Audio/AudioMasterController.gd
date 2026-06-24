@@ -30,7 +30,7 @@ func PlayMusic() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music Master"), UtilsGlobalVariables.MusicBusLevel)
 	
 	if !music_player.playing:
-		music_player.stream = preload("uid://d0s002ifc8vx5")
+		music_player.stream = preload("uid://m2b0xgpj324s") #preload("uid://cb66p1ejyerpc")
 		FadeIn(music_player)
 		music_player.play()
 
