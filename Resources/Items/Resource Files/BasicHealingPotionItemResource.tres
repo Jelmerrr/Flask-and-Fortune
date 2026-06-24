@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bic5busq6fm2s"]
+
+[ext_resource type="Script" uid="uid://i7xrlwuwu02f" path="res://Resources/Items/ItemResource.gd" id="1_02hy5"]
+
+[resource]
+script = ExtResource("1_02hy5")
+itemName = "Basic Healing Potion"
+itemCategory = 2
+metadata/_custom_type_script = "uid://i7xrlwuwu02f"

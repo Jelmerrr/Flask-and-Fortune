@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=18 format=3 uid="uid://buwfq2onk8fm2"]
+
+[ext_resource type="Script" uid="uid://bvkm1krp5pwkh" path="res://Resources/Inventory/InventorySlotResource.gd" id="1_yehnc"]
+[ext_resource type="Resource" uid="uid://ijdsiogsvex5" path="res://Resources/Items/Resource Files/ComfreyItemResource.tres" id="2_r1ny0"]
+[ext_resource type="Resource" uid="uid://bjdbyd61u0qx2" path="res://Resources/Items/Resource Files/SunberryItemResource.tres" id="3_re2h3"]
+[ext_resource type="Script" uid="uid://c1khi8bu25ddu" path="res://Resources/Crafting/Dependencies/CraftingMethods.gd" id="4_4sa7k"]
+[ext_resource type="Script" uid="uid://dtukklmctt8ar" path="res://Resources/Loot Tables/LootTableEntryResource.gd" id="5_40ucp"]
+[ext_resource type="Resource" uid="uid://bic5busq6fm2s" path="res://Resources/Items/Resource Files/BasicHealingPotionItemResource.tres" id="6_ff8ii"]
+[ext_resource type="Script" uid="uid://c15ebidgxcou2" path="res://Resources/Loot Tables/LootTableResource.gd" id="7_1fre2"]
+[ext_resource type="Script" uid="uid://b4j46djuvus1" path="res://Resources/Crafting/Results/CraftingRecipeResult.gd" id="8_ke53o"]
+[ext_resource type="Script" uid="uid://c52j37j7dsrdw" path="res://Resources/Crafting/Recipes/CraftingRecipe.gd" id="9_gsix5"]
+[ext_resource type="Script" uid="uid://c25n3ma4yxvhm" path="res://Resources/Crafting/Dependencies/CraftingStations.gd" id="10_gj6b1"]
+
+[sub_resource type="Resource" id="Resource_pd43q"]
+script = ExtResource("1_yehnc")
+item = ExtResource("2_r1ny0")
+amount = 1
+metadata/_custom_type_script = "uid://bvkm1krp5pwkh"
+
+[sub_resource type="Resource" id="Resource_kjyfm"]
+script = ExtResource("1_yehnc")
+item = ExtResource("3_re2h3")
+amount = 4
+metadata/_custom_type_script = "uid://bvkm1krp5pwkh"
+
+[sub_resource type="Resource" id="Resource_o77mo"]
+script = ExtResource("4_4sa7k")
+craftingMethods = "Alchemy"
+metadata/_custom_type_script = "uid://c1khi8bu25ddu"
+
+[sub_resource type="Resource" id="Resource_22wwi"]
+script = ExtResource("5_40ucp")
+Item = ExtResource("6_ff8ii")
+rarityWeigth = 100
+amountMin = 1
+amountMax = 1
+metadata/_custom_type_script = "uid://dtukklmctt8ar"
+
+[sub_resource type="Resource" id="Resource_dhvql"]
+script = ExtResource("7_1fre2")
+lootTable = Array[ExtResource("5_40ucp")]([SubResource("Resource_22wwi")])
+itemsRollAmount = 1
+metadata/_custom_type_script = "uid://c15ebidgxcou2"
+
+[sub_resource type="Resource" id="Resource_u7kre"]
+script = ExtResource("8_ke53o")
+mainResults = SubResource("Resource_dhvql")
+metadata/_custom_type_script = "uid://b4j46djuvus1"
+
+[sub_resource type="Resource" id="Resource_63r88"]
+script = ExtResource("10_gj6b1")
+craftingStations = "AlchemyStation"
+metadata/_custom_type_script = "uid://c25n3ma4yxvhm"
+
+[resource]
+script = ExtResource("9_gsix5")
+ingredients = Array[ExtResource("1_yehnc")]([SubResource("Resource_pd43q"), SubResource("Resource_kjyfm")])
+results = SubResource("Resource_u7kre")
+method = SubResource("Resource_o77mo")
+station = SubResource("Resource_63r88")
+craftingTime = 5.0
+recipeName = "Basic Potion"
+metadata/_custom_type_script = "uid://c52j37j7dsrdw"
