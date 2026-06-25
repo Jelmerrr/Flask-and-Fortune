@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw6yq4gb6t4dw"]
+[gd_scene load_steps=7 format=3 uid="uid://cw6yq4gb6t4dw"]
 
 [ext_resource type="PackedScene" uid="uid://c8428k051oqmk" path="res://Scenes/Placeholder/test_environment.tscn" id="1_exiw7"]
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_8ueo7"]
@@ -10,6 +10,13 @@ colors = PackedColorArray(0.33416107, 0.33297607, 0.6490966, 1, 0.6626097, 0.458
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_axpmp"]
 gradient = SubResource("Gradient_pi6qo")
+use_hdr = true
+
+[sub_resource type="Environment" id="Environment_7anny"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.1
 
 [node name="Visual Handler" type="Node2D"]
 
@@ -52,11 +59,12 @@ autowrap_mode = 2
 [node name="Test Environment" parent="Scene Handler" instance=ExtResource("1_exiw7")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Handler"]
-visible = false
 color = Color(0.24567527, 0.3414838, 0.7108614, 1)
 script = ExtResource("4_pi6qo")
 gradient = SubResource("GradientTexture1D_axpmp")
-dayDurationInSeconds = 10
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Handler"]
+environment = SubResource("Environment_7anny")
 
 [node name="Control" type="Control" parent="."]
 visible = false
