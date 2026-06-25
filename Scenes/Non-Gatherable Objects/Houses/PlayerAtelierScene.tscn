@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://hiwkpj110h6r"]
+[gd_scene load_steps=10 format=3 uid="uid://hiwkpj110h6r"]
 
 [ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Placeholder/HouseTestPlaceholder.png" id="1_82t48"]
+[ext_resource type="Texture2D" uid="uid://cqwxxvjrn42kf" path="res://Assets/Lighting/512x512 textures (61).png" id="2_vg3tk"]
+[ext_resource type="Script" uid="uid://dquvisnyqqvsc" path="res://Scripts/Visual/Lighting/PointLightController.gd" id="3_sidx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82t48"]
 size = Vector2(149, 190)
@@ -55,3 +57,74 @@ shape = SubResource("RectangleShape2D_7wcm2")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(146, 157)
 shape = SubResource("RectangleShape2D_traf3")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(-105, 147)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.4
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(-96, 21)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.25
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(-75, 21)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.25
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(-46, 146)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.1
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.6
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(77, 138)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.25
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(113, 138)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.25
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(158, 125)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vg3tk")
+texture_scale = 0.1
+script = ExtResource("3_sidx1")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.6
