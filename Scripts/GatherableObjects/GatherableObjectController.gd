@@ -35,11 +35,6 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT && entered_area == true && distance <= 60 && UtilsGlobalVariables.currentPlayerState != UtilsGlobalEnums.playerState.Gathering:
 			gather_duration_timer.wait_time = gatherableData.baseGatherTime
 			gather_duration_timer.start()
-			#update_progress_timer.start()
-			
-			#gather_progress_bar.visible = true
-			#gather_progress_bar.max_value = gather_timer.wait_time
-			#gather_progress_bar.step = gather_progress_bar.max_value / 30
 			
 			UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Gathering
 			AudioController.PlaySFX(preload("uid://6uhxdfup02ac"), randi_range(0, 15))

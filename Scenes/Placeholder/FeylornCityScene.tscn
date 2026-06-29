@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8428k051oqmk"]
+
+[ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
+[ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
+[ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
+[ext_resource type="PackedScene" uid="uid://hiwkpj110h6r" path="res://Scenes/Non-Gatherable Objects/Houses/PlayerAtelierScene.tscn" id="6_42avm"]
+
+[node name="Feylorn City" type="Node2D"]
+y_sort_enabled = true
+
+[node name="PlayerController" parent="." instance=ExtResource("1_3ileo")]
+y_sort_enabled = true
+
+[node name="Visual Camera" type="Camera2D" parent="PlayerController"]
+y_sort_enabled = true
+editor_draw_screen = false
+
+[node name="Camera Size Drawer" type="Camera2D" parent="PlayerController/Visual Camera"]
+y_sort_enabled = true
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="ExampleStreet" type="Sprite2D" parent="."]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(181, -236)
+texture = ExtResource("5_7i3ty")
+
+[node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(-34, -3)
+
+[node name="Sunberry3" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(368, -289)
+
+[node name="Sunberry4" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(289, -292)
+
+[node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
+position = Vector2(36, -3)
+
+[node name="Player Atelier" parent="." instance=ExtResource("6_42avm")]
+position = Vector2(275, -259)
