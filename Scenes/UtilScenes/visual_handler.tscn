@@ -16,9 +16,12 @@ use_hdr = true
 
 [sub_resource type="Environment" id="Environment_7anny"]
 background_mode = 3
+background_canvas_max_layer = 100
 glow_enabled = true
-glow_normalized = true
-glow_bloom = 0.1
+glow_intensity = 1.2
+glow_bloom = 0.2
+glow_blend_mode = 1
+glow_hdr_luminance_cap = 24.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l8bls"]
 shader = ExtResource("4_axpmp")
