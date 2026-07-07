@@ -22,7 +22,6 @@ func _ready() -> void:
 	dayDurationInDelta = dayDurationInMinutes * 60
 	timeScaleMultiplier = PI / (0.5 * dayDurationInDelta)
 	inGameMinuteInDelta = dayDurationInDelta / MINUTESINDAY
-	print(timeScaleMultiplier)
 
 func _physics_process(delta: float) -> void:
 	#1 delta = 1 second

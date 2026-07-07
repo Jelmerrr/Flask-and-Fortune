@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://hiwkpj110h6r"]
+[gd_scene load_steps=11 format=3 uid="uid://hiwkpj110h6r"]
 
-[ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Placeholder/HouseTestPlaceholder.png" id="1_82t48"]
+[ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Sprites/World Object Sprites/Buildings/Player Atelier/HouseTestPlaceholder.png" id="1_82t48"]
 [ext_resource type="Texture2D" uid="uid://cqwxxvjrn42kf" path="res://Assets/Lighting/512x512 textures (61).png" id="2_vg3tk"]
 [ext_resource type="Script" uid="uid://dquvisnyqqvsc" path="res://Scripts/Visual/Lighting/PointLightController.gd" id="3_sidx1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7wcm2"]
+diffuse_texture = ExtResource("1_82t48")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82t48"]
 size = Vector2(149, 190)
@@ -28,7 +31,7 @@ y_sort_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, 149)
-texture = ExtResource("1_82t48")
+texture = SubResource("CanvasTexture_7wcm2")
 offset = Vector2(0, -149)
 
 [node name="Collisions" type="StaticBody2D" parent="."]
@@ -60,69 +63,85 @@ shape = SubResource("RectangleShape2D_traf3")
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="PointLight2D" type="PointLight2D" parent="Lights"]
-position = Vector2(-105, 147)
+[node name="Points" type="Node2D" parent="Lights"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights/Points"]
+position = Vector2(-108, 145)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.4
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 
-[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D2" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(-96, 21)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.25
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 maxEnergy = 0.8
 
-[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D7" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(-75, 21)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.25
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 maxEnergy = 0.8
 
-[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D3" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(-46, 146)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.1
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 maxEnergy = 0.6
 
-[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D4" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(77, 138)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.25
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 maxEnergy = 0.8
 
-[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D5" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(113, 138)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.25
 script = ExtResource("3_sidx1")
 isDeterminedByDayNightCycle = true
 maxEnergy = 0.8
 
-[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+[node name="PointLight2D6" type="PointLight2D" parent="Lights/Points"]
 position = Vector2(158, 125)
 color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 texture = ExtResource("2_vg3tk")
 texture_scale = 0.1
 script = ExtResource("3_sidx1")

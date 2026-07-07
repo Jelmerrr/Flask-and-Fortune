@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n8wrv1iqppr5"
-path="res://.godot/imported/HouseTestPlaceholder.png-921a23ba343fecbd2e1644f8a866e234.ctex"
+uid="uid://blrffl8o7ixvf"
+path="res://.godot/imported/HouseTestPlaceholderNormalMap.png-d54e8089b38886140d1a3952d356d729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/HouseTestPlaceholder.png"
-dest_files=["res://.godot/imported/HouseTestPlaceholder.png-921a23ba343fecbd2e1644f8a866e234.ctex"]
+source_file="res://Assets/Sprites/World Object Sprites/Buildings/Player Atelier/HouseTestPlaceholderNormalMap.png"
+dest_files=["res://.godot/imported/HouseTestPlaceholderNormalMap.png-d54e8089b38886140d1a3952d356d729.ctex"]
 
 [params]
 

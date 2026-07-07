@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw6yq4gb6t4dw"]
+[gd_scene load_steps=8 format=3 uid="uid://cw6yq4gb6t4dw"]
 
 [ext_resource type="PackedScene" uid="uid://c8428k051oqmk" path="res://Scenes/Placeholder/FeylornCityScene.tscn" id="1_exiw7"]
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_8ueo7"]
-[ext_resource type="Shader" uid="uid://bxsmbdfe2ac0t" path="res://Shaders/Global Shaders/GodRaysShader.gdshader" id="4_axpmp"]
+[ext_resource type="PackedScene" uid="uid://egbwh7so3u76" path="res://Scenes/Visuals/WorldVFXController.tscn" id="4_axpmp"]
 [ext_resource type="Script" uid="uid://vjf41hvbmgn3" path="res://Scripts/Visual/DayNightModulateController.gd" id="4_pi6qo"]
-[ext_resource type="Script" uid="uid://di81m4m6ornt6" path="res://Scripts/Visual/Lighting/GodRaysController.gd" id="5_axpmp"]
 
 [sub_resource type="Gradient" id="Gradient_pi6qo"]
 offsets = PackedFloat32Array(0, 0.3580247, 0.48765433, 0.63580245, 0.74691355, 0.9074074)
@@ -20,23 +19,8 @@ background_canvas_max_layer = 100
 glow_enabled = true
 glow_intensity = 1.2
 glow_bloom = 0.2
+glow_blend_mode = 1
 glow_hdr_luminance_cap = 24.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8bls"]
-shader = ExtResource("4_axpmp")
-shader_parameter/angle = -0.005
-shader_parameter/position = 0.07
-shader_parameter/spread = 0.50000002375
-shader_parameter/cutoff = 0.25000005937500003
-shader_parameter/falloff = 1.0
-shader_parameter/edge_fade = 0.250000011875
-shader_parameter/speed = 1.0
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 0.3
-shader_parameter/color = Color(1, 0.9019608, 0.6509804, 0)
-shader_parameter/hdr = true
-shader_parameter/seed = 5.0
 
 [node name="Visual Handler" type="Node2D"]
 
@@ -89,20 +73,7 @@ gradient = SubResource("GradientTexture1D_axpmp")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Handler"]
 environment = SubResource("Environment_7anny")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Scene Handler"]
-
-[node name="GodRays" type="ColorRect" parent="Scene Handler/CanvasLayer"]
-material = SubResource("ShaderMaterial_l8bls")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("5_axpmp")
-morningTwilightTime = 0.3
-morningTwilightLength = 0.35
-rayColor = Color(1, 0.9019608, 0.6509804, 0.5882353)
+[node name="WorldVFXController" parent="Scene Handler" instance=ExtResource("4_axpmp")]
 
 [node name="Control" type="Control" parent="."]
 visible = false

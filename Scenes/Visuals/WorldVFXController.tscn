@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://egbwh7so3u76"]
+
+[ext_resource type="Script" uid="uid://llvx5xypux0l" path="res://Scripts/Visual/Lighting/WorldVFXControllergd.gd" id="1_1wfua"]
+[ext_resource type="Shader" uid="uid://bxsmbdfe2ac0t" path="res://Shaders/Global Shaders/GodRaysShader.gdshader" id="1_7j37i"]
+[ext_resource type="Script" uid="uid://di81m4m6ornt6" path="res://Scripts/Visual/Lighting/GodRaysController.gd" id="2_1wfua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_voqvk"]
+shader = ExtResource("1_7j37i")
+shader_parameter/angle = -0.005
+shader_parameter/position = 0.07
+shader_parameter/spread = 0.50000002375
+shader_parameter/cutoff = 0.25000005937500003
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.250000011875
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.462000021945
+shader_parameter/color = Color(1, 0.9019608, 0.6509804, 0)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
+[node name="WorldVFXController" type="Node2D"]
+script = ExtResource("1_1wfua")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GodRays" type="Node" parent="CanvasLayer"]
+
+[node name="GodRayRect" type="ColorRect" parent="CanvasLayer/GodRays"]
+material = SubResource("ShaderMaterial_voqvk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_1wfua")
+morningTwilightTime = 0.25
+morningTwilightLength = 0.4
+rayColor = Color(1, 0.9019608, 0.6509804, 0.5882353)

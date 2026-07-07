@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8p0g5r0f2q08"]
+[gd_scene load_steps=8 format=3 uid="uid://c8p0g5r0f2q08"]
 
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_l1enj"]
 [ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_c1odu"]
@@ -11,6 +11,9 @@ shader = ExtResource("2_rm6tn")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/strength = 0.0
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_4j76p"]
+diffuse_texture = ExtResource("4_ls3t2")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdb2t"]
 size = Vector2(28, 19)
 
@@ -22,7 +25,7 @@ gatherableData = ExtResource("2_c1odu")
 [node name="GatherObjectSprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_vrk6t")
-texture = ExtResource("4_ls3t2")
+texture = SubResource("CanvasTexture_4j76p")
 offset = Vector2(0, -10)
 
 [node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
