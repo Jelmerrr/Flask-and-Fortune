@@ -12,12 +12,6 @@ void fragment(){
 	alpha += texture(TEXTURE, UV + vec2(-size_x, 0)).a * strength;
 	alpha += texture(TEXTURE, UV + vec2(0, size_y)).a * strength;
 	alpha += texture(TEXTURE, UV + vec2(0, -size_y)).a * strength;
-	//For outlining corners
-	//Change the -4.0 to -8.0 in alpa if adding these lines
-	/*alpha += texture(TEXTURE, UV + vec2(size_x, size_y)).a;
-	alpha += texture(TEXTURE, UV + vec2(-size_x, size_y)).a;
-	alpha += texture(TEXTURE, UV + vec2(-size_x, -size_y)).a;
-	alpha += texture(TEXTURE, UV + vec2(size_x, -size_y)).a;*/
 	vec4 final_color = mix(sprite_color, outline_color, clamp(alpha * strength, 0.0, 1.0));
 	COLOR = vec4(final_color.rgb, clamp(abs(alpha) + sprite_color.a, 0.0, 1.0));
 }

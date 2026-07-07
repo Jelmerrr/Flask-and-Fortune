@@ -1,13 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8p0g5r0f2q08"]
+[gd_scene load_steps=10 format=3 uid="uid://c8p0g5r0f2q08"]
 
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_l1enj"]
 [ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_c1odu"]
-[ext_resource type="Shader" uid="uid://bhq0vwnwcxcg3" path="res://Shaders/Sprite Processing Shaders/2dOutline.gdshader" id="2_rm6tn"]
+[ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="3_ls3t2"]
 [ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="4_ls3t2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5ibs4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4j76p"]
+noise = SubResource("FastNoiseLite_5ibs4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrk6t"]
 resource_local_to_scene = true
-shader = ExtResource("2_rm6tn")
+shader = ExtResource("3_ls3t2")
+shader_parameter/enableWind = true
+shader_parameter/enableOutline = true
+shader_parameter/render_noise = false
+shader_parameter/framerate = 7.0
+shader_parameter/quantised = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4j76p")
+shader_parameter/amplitude = 0.2
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/strength = 0.0
 

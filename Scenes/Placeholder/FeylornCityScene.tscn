@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=10 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
 [ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
+[ext_resource type="Shader" uid="uid://dcv8xv4qq5aao" path="res://Shaders/Sprite Processing Shaders/WindShader.gdshader" id="5_w1sha"]
+[ext_resource type="Texture2D" uid="uid://fdlq8e5qanty" path="res://Assets/Sprites/World Object Sprites/Clutter/BirchTreeTest1.png" id="5_y0wu3"]
 [ext_resource type="PackedScene" uid="uid://hiwkpj110h6r" path="res://Scenes/Non-Gatherable Objects/Houses/PlayerAtelierScene.tscn" id="6_42avm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w1sha"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vtxbk"]
+noise = SubResource("FastNoiseLite_w1sha")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtxbk"]
+shader = ExtResource("5_w1sha")
+shader_parameter/enableWind = true
+shader_parameter/render_noise = false
+shader_parameter/framerate = 7.0
+shader_parameter/quantised = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vtxbk")
+shader_parameter/amplitude = 0.03999999910592
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)
 
 [node name="Feylorn City" type="Node2D"]
 y_sort_enabled = true
@@ -40,3 +61,10 @@ position = Vector2(36, -3)
 
 [node name="Player Atelier" parent="." instance=ExtResource("6_42avm")]
 position = Vector2(275, -259)
+
+[node name="BirchTreeTest1" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_vtxbk")
+position = Vector2(-69, -158)
+texture = ExtResource("5_y0wu3")
+offset = Vector2(1, -64)
