@@ -69,38 +69,9 @@ autowrap_mode = 2
 color = Color(0.24567527, 0.3414838, 0.7108614, 1)
 script = ExtResource("4_pi6qo")
 gradient = SubResource("GradientTexture1D_axpmp")
+isEnabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Handler"]
 environment = SubResource("Environment_7anny")
 
 [node name="WorldVFXController" parent="Scene Handler" instance=ExtResource("4_axpmp")]
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
-physics_object_picking = true
-size = Vector2i(960, 540)
-render_target_update_mode = 0

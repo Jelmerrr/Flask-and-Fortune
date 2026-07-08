@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_l1enj"]
 [ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_c1odu"]
 [ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="3_ls3t2"]
-[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png" id="4_ls3t2"]
+[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Bushes/Sunberry/1/SunberrySprite1.png" id="4_ls3t2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5ibs4"]
 
@@ -52,6 +52,8 @@ shape = SubResource("RectangleShape2D_hdb2t")
 
 [node name="GatherDurationTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Collisions" type="StaticBody2D" parent="."]
 
 [connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]

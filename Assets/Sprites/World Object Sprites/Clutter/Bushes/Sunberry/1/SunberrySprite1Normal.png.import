@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fdlq8e5qanty"
-path="res://.godot/imported/BirchTreeTest1.png-d3c5d960f58e3364870c433880a3dac6.ctex"
+uid="uid://bwc0w6sy38yhr"
+path="res://.godot/imported/SunberrySprite1Normal.png-2c01ccca3db290a47ff24e9e76c95e2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World Object Sprites/Clutter/BirchTreeTest1.png"
-dest_files=["res://.godot/imported/BirchTreeTest1.png-d3c5d960f58e3364870c433880a3dac6.ctex"]
+source_file="res://Assets/Sprites/World Object Sprites/Clutter/Bushes/Sunberry/1/SunberrySprite1Normal.png"
+dest_files=["res://.godot/imported/SunberrySprite1Normal.png-2c01ccca3db290a47ff24e9e76c95e2d.ctex"]
 
 [params]
 

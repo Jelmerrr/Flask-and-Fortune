@@ -6,6 +6,7 @@ extends Node2D
 @onready var gather_mouse_area: Area2D = $GatherObjectSprite/GatherMouseArea
 @onready var gather_collision_shape: CollisionShape2D = $GatherObjectSprite/GatherMouseArea/GatherCollisionShape
 @onready var gather_duration_timer: Timer = $GatherDurationTimer
+@onready var collisions: StaticBody2D = $Collisions
 
 var entered_area: bool = false
 var distance: float
@@ -62,3 +63,7 @@ func GatherResource() -> void:
 	#Hide object from scene and stop calculating distance checks
 	harvestable = false
 	gather_object_sprite.visible = false
+	#Disable collisions if present
+	if collisions.get_children():
+		for child in collisions.get_children():
+			child.disabled = true

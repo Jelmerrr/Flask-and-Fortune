@@ -5,10 +5,10 @@ uniform bool enableOutline = true;
 
 group_uniforms Wind_Shader;
 uniform bool render_noise = false;
-uniform float framerate = 5.0; // Framerate for worldspace and viewspace grass rotation
+uniform float framerate = 7.0; // Framerate for worldspace and viewspace grass rotation
 uniform bool quantised = true; // Toggle quantised framerate
 uniform sampler2D noise_texture : repeat_enable; // set in inspector
-uniform float amplitude : hint_range(0.0, 0.5, 0.01) = 0.2;
+uniform float amplitude : hint_range(0.0, 0.5, 0.01) = 0.04;
 uniform float time_scale : hint_range(0.0, 5.0, 0.01) = 0.04;
 uniform float noise_scale : hint_range(0.0, 2.0, 0.0001) = 0.001;
 uniform float rotation_strength : hint_range(0.0, 5.0, 0.1) = 1;
@@ -27,7 +27,7 @@ float location_seed (vec2 location) { // Random value based on world space locat
 
 void vertex(){
     world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
-	
+
 	// Find origin of each quad of grass in world-space
 	object_origin = (MODEL_MATRIX * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
 
@@ -85,9 +85,9 @@ void fragment() {
 		vec4 noise_color = texture(noise_texture, noise_sample_pos);
 		COLOR = noise_color;
 	}
-	
+
 	vec4 updatedTexture = texture(TEXTURE, result_uvs);
-	
+
 	//Outline shader
 	float size_x = 1.0/float(textureSize(TEXTURE, 0).x);
 	float size_y = 1.0/float(textureSize(TEXTURE, 0).y);

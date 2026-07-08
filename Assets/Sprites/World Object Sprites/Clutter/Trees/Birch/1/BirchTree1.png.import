@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwc0w6sy38yhr"
-path="res://.godot/imported/Placeholder Bushnormalmaptest.png-ced3f2d0761c558e34712d46935e5e58.ctex"
+uid="uid://cydveghsaqqa8"
+path="res://.godot/imported/BirchTree1.png-fd75bc11fbf32c894d97fa4d558692cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bushnormalmaptest.png"
-dest_files=["res://.godot/imported/Placeholder Bushnormalmaptest.png-ced3f2d0761c558e34712d46935e5e58.ctex"]
+source_file="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree1.png"
+dest_files=["res://.godot/imported/BirchTree1.png-fd75bc11fbf32c894d97fa4d558692cd.ctex"]
 
 [params]
 

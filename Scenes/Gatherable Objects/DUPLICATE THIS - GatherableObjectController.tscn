@@ -1,12 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctyl52wfuau5g"]
+[gd_scene load_steps=8 format=3 uid="uid://ctyl52wfuau5g"]
 
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_2ls7t"]
-[ext_resource type="Shader" uid="uid://bhq0vwnwcxcg3" path="res://Shaders/Sprite Processing Shaders/2dOutline.gdshader" id="2_cr6go"]
+[ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="2_2ls7t"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cr6go"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vegk2"]
+noise = SubResource("FastNoiseLite_cr6go")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrk6t"]
-shader = ExtResource("2_cr6go")
+shader = ExtResource("2_2ls7t")
+shader_parameter/enableWind = true
+shader_parameter/enableOutline = true
+shader_parameter/render_noise = false
+shader_parameter/framerate = 7.0
+shader_parameter/quantised = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vegk2")
+shader_parameter/amplitude = 0.04
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/strength = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2ls7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdb2t"]
 
@@ -17,6 +36,7 @@ script = ExtResource("1_2ls7t")
 [node name="GatherObjectSprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_vrk6t")
+texture = SubResource("CanvasTexture_2ls7t")
 
 [node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
 
@@ -26,5 +46,8 @@ shape = SubResource("RectangleShape2D_hdb2t")
 [node name="GatherDurationTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Collisions" type="StaticBody2D" parent="."]
+
 [connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]
+[connection signal="timeout" from="GatherDurationTimer" to="." method="_on_gather_duration_timer_timeout"]

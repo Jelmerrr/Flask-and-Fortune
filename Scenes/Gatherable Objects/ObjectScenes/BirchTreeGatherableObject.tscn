@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://owllymvjumjc"]
+
+[ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_i7kff"]
+[ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_ucv7s"]
+[ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="2_you6g"]
+[ext_resource type="Texture2D" uid="uid://cydveghsaqqa8" path="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree1.png" id="3_you6g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ucv7s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lddam"]
+noise = SubResource("FastNoiseLite_ucv7s")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrk6t"]
+resource_local_to_scene = true
+shader = ExtResource("2_you6g")
+shader_parameter/enableWind = true
+shader_parameter/enableOutline = true
+shader_parameter/render_noise = false
+shader_parameter/framerate = 7.0
+shader_parameter/quantised = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_lddam")
+shader_parameter/amplitude = 0.04
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/strength = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2ls7t"]
+diffuse_texture = ExtResource("3_you6g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdb2t"]
+size = Vector2(16, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucv7s"]
+size = Vector2(60, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_you6g"]
+size = Vector2(12, 12)
+
+[node name="BirchTree" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_i7kff")
+gatherableData = ExtResource("2_ucv7s")
+
+[node name="GatherObjectSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_vrk6t")
+texture = SubResource("CanvasTexture_2ls7t")
+offset = Vector2(0, -96)
+
+[node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
+
+[node name="GatherCollisionShape" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+position = Vector2(0, -73)
+shape = SubResource("RectangleShape2D_hdb2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+position = Vector2(1, -103)
+shape = SubResource("RectangleShape2D_ucv7s")
+
+[node name="GatherDurationTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_you6g")
+
+[connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
+[connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]
+[connection signal="timeout" from="GatherDurationTimer" to="." method="_on_gather_duration_timer_timeout"]

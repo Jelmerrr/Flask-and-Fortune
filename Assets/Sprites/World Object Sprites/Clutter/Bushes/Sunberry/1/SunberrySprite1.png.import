@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blv3c2sjdg70f"
-path="res://.godot/imported/Placeholder Bush.png-829cb0e36380e4896b0a4cc80ab7e11b.ctex"
+path="res://.godot/imported/SunberrySprite1.png-987d441447b030d80e1d98f8378943d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World Object Sprites/Clutter/Placeholder Bush.png"
-dest_files=["res://.godot/imported/Placeholder Bush.png-829cb0e36380e4896b0a4cc80ab7e11b.ctex"]
+source_file="res://Assets/Sprites/World Object Sprites/Clutter/Bushes/Sunberry/1/SunberrySprite1.png"
+dest_files=["res://.godot/imported/SunberrySprite1.png-987d441447b030d80e1d98f8378943d4.ctex"]
 
 [params]
 
