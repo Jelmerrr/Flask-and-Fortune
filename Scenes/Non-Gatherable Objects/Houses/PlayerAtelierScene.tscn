@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://hiwkpj110h6r"]
+[gd_scene load_steps=14 format=3 uid="uid://hiwkpj110h6r"]
 
 [ext_resource type="Texture2D" uid="uid://n8wrv1iqppr5" path="res://Assets/Sprites/World Object Sprites/Buildings/Player Atelier/HouseTestPlaceholder.png" id="1_82t48"]
 [ext_resource type="Texture2D" uid="uid://cqwxxvjrn42kf" path="res://Assets/Lighting/512x512 textures (61).png" id="2_vg3tk"]
 [ext_resource type="Script" uid="uid://dquvisnyqqvsc" path="res://Scripts/Visual/Lighting/PointLightController.gd" id="3_sidx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82t48"]
-size = Vector2(149, 190)
+size = Vector2(102, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nhpo"]
+size = Vector2(23, 190)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0prc"]
 size = Vector2(97, 136)
@@ -22,6 +25,15 @@ size = Vector2(16, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_traf3"]
 size = Vector2(6, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n280b"]
+size = Vector2(24, 187)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2a6g0"]
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pttf6"]
+radius = 5.0
+
 [node name="Player Atelier" type="Node2D"]
 y_sort_enabled = true
 
@@ -35,8 +47,12 @@ offset = Vector2(0, -149)
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(-85.5, 81)
+position = Vector2(-109, 81)
 shape = SubResource("RectangleShape2D_82t48")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-22.5, 81)
+shape = SubResource("RectangleShape2D_2nhpo")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(94.5, 102)
@@ -57,6 +73,34 @@ shape = SubResource("RectangleShape2D_7wcm2")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(146, 157)
 shape = SubResource("RectangleShape2D_traf3")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-46, 79.5)
+shape = SubResource("RectangleShape2D_n280b")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-16, 147)
+shape = SubResource("CapsuleShape2D_2a6g0")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(51, 158)
+shape = SubResource("CapsuleShape2D_pttf6")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(138, 158)
+shape = SubResource("CapsuleShape2D_pttf6")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(178, 150)
+shape = SubResource("CapsuleShape2D_pttf6")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-16, 164)
+shape = SubResource("CapsuleShape2D_pttf6")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-155, 164)
+shape = SubResource("CapsuleShape2D_pttf6")
 
 [node name="Lights" type="Node2D" parent="."]
 

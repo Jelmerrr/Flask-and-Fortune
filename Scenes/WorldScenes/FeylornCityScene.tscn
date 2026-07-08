@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=9 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="Script" uid="uid://bi7eqy4c87hcx" path="res://Scripts/Scenes/IndividualSceneControllers/FeylornCityController.gd" id="1_ipc1c"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
 [ext_resource type="PackedScene" uid="uid://owllymvjumjc" path="res://Scenes/Gatherable Objects/ObjectScenes/BirchTreeGatherableObject.tscn" id="5_y0wu3"]
 [ext_resource type="PackedScene" uid="uid://hiwkpj110h6r" path="res://Scenes/Non-Gatherable Objects/Houses/PlayerAtelierScene.tscn" id="6_42avm"]
+[ext_resource type="Script" uid="uid://capcf7idkbcgg" path="res://Scripts/Scenes/SceneAreaSwitchController.gd" id="7_86fk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2mip"]
+size = Vector2(22, 1)
 
 [node name="Feylorn City" type="Node2D"]
 y_sort_enabled = true
@@ -29,26 +33,41 @@ y_sort_enabled = true
 position = Vector2(181, -236)
 texture = ExtResource("5_7i3ty")
 
-[node name="Sunberry" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(-34, -3)
-
-[node name="Sunberry3" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(368, -289)
-
-[node name="Sunberry4" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(289, -292)
-
-[node name="Sunberry2" parent="." instance=ExtResource("4_nfcxt")]
-position = Vector2(36, -3)
-
 [node name="Player Atelier" parent="." instance=ExtResource("6_42avm")]
 position = Vector2(275, -259)
 
-[node name="GatherableObjectController" parent="." instance=ExtResource("5_y0wu3")]
+[node name="Gatherable Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="BirchTree" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
 position = Vector2(440, -280)
 
-[node name="GatherableObjectController2" parent="." instance=ExtResource("5_y0wu3")]
+[node name="BirchTree2" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
 position = Vector2(446, -186)
 
-[node name="GatherableObjectController3" parent="." instance=ExtResource("5_y0wu3")]
+[node name="BirchTree3" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
 position = Vector2(278, -300)
+
+[node name="Sunberry" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+position = Vector2(-34, -3)
+
+[node name="Sunberry3" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+position = Vector2(368, -289)
+
+[node name="Sunberry4" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+position = Vector2(289, -292)
+
+[node name="Sunberry2" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+position = Vector2(36, -3)
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Transitions"]
+position = Vector2(229, -86)
+script = ExtResource("7_86fk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_p2mip")
+
+[connection signal="body_entered" from="Transitions/Area2D" to="Transitions/Area2D" method="_on_body_entered"]
