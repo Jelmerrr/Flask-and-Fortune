@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=7 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
+[ext_resource type="Script" uid="uid://bi7eqy4c87hcx" path="res://Scripts/Scenes/IndividualSceneControllers/FeylornCityController.gd" id="1_ipc1c"]
 [ext_resource type="PackedScene" uid="uid://c8p0g5r0f2q08" path="res://Scenes/Gatherable Objects/ObjectScenes/SunberryGatherableObject.tscn" id="4_nfcxt"]
 [ext_resource type="Texture2D" uid="uid://dy10v8phoj74x" path="res://Assets/Placeholder/ExampleStreet.png" id="5_7i3ty"]
 [ext_resource type="PackedScene" uid="uid://owllymvjumjc" path="res://Scenes/Gatherable Objects/ObjectScenes/BirchTreeGatherableObject.tscn" id="5_y0wu3"]
@@ -8,6 +9,7 @@
 
 [node name="Feylorn City" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ipc1c")
 
 [node name="PlayerController" parent="." instance=ExtResource("1_3ileo")]
 y_sort_enabled = true

@@ -37,8 +37,9 @@ size = Vector2(16, 146)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucv7s"]
 size = Vector2(60, 86)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_you6g"]
-size = Vector2(12, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ucv7s"]
+radius = 4.0
+height = 14.0
 
 [node name="BirchTree" type="Node2D"]
 y_sort_enabled = true
@@ -67,8 +68,8 @@ one_shot = true
 [node name="Collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_you6g")
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_ucv7s")
 
 [connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]
