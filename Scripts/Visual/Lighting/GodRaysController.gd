@@ -6,21 +6,34 @@ extends ColorRect
 @export var rayColor: Color
 
 var rayVisible: bool = false
-var isMorning = true
+var shouldRayShow: bool = false
+
+var isMorning: bool = true
+
+var isOutside: bool = false
+var isRaining: bool = false
+
 var tweenDuration: float
+
 
 func _ready() -> void:
 	#I hecking love math
 	#automatically adjust god ray easing based on length of day and length of godray
 	GlobalSignalBus.newDay.connect(newDay)
 	tweenDuration = ((asin((2 * morningTwilightLength) - 1) + 0.5 * PI) / GlobalTimeOfDayController.timeScaleMultiplier) / 4
+	GlobalSignalBus.isOutside.connect(changeOutsideState)
+	GlobalSignalBus.isRaining.connect(changeRainingState)
 
 func newDay() -> void:
 	isMorning = true
 
+func yep() -> void:
+	print("yep")
+
 func _physics_process(_delta: float) -> void:
+	shouldRayShow = !isRaining && isOutside
 	var value = (sin(GlobalTimeOfDayController.time - 0.5 * PI) + 1.0) * 0.5
-	if isMorning:
+	if isMorning && shouldRayShow:
 		if value >= morningTwilightTime && value <= (morningTwilightLength + morningTwilightTime) && !rayVisible:
 			rayVisible = true
 			showGodRays(tweenDuration)
@@ -43,3 +56,9 @@ func hideGodRays(duration: float) -> void:
 
 func setShaderColorParam(value: Color):
 	material.set_shader_parameter("color", value)
+
+func changeOutsideState(state: bool):
+	isOutside = state
+
+func changeRainingState(state: bool):
+	isRaining = state

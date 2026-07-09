@@ -35,6 +35,7 @@ func PlayMusic() -> void:
 		music_player.play()
 
 func PlaySFX(AudioFile: AudioStreamWAV, offset: int) -> void:
+	print(sfx_channels)
 	var instance = SFX_PLAYER.instantiate()
 	instance.stream = AudioFile
 	instance.offset = offset
@@ -44,3 +45,9 @@ func StopSFX(AudioFile: AudioStreamWAV) -> void:
 	for player in sfx_channels.get_children():
 		if player.stream == AudioFile:
 			FadeOut(player)
+
+func IsSooundAlreadyPlaying(AudioFile: AudioStreamWAV) -> bool:
+	for player in sfx_channels.get_children():
+		if player.stream == AudioFile:
+			return true
+	return false
