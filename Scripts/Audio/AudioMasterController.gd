@@ -35,7 +35,6 @@ func PlayMusic() -> void:
 		music_player.play()
 
 func PlaySFX(AudioFile: AudioStreamWAV, offset: int) -> void:
-	print(sfx_channels)
 	var instance = SFX_PLAYER.instantiate()
 	instance.stream = AudioFile
 	instance.offset = offset
