@@ -6,7 +6,13 @@ extends ColorRect
 @export var rayColor: Color
 
 var rayVisible: bool = false
-var shouldRayShow: bool = false
+var shouldRayShow: bool = false:
+	set(value):
+		shouldRayShow = value
+		if !value && rayVisible:
+			rayVisible = false
+			hideGodRays(tweenDuration)
+			isMorning = false
 
 var isMorning: bool = true
 
@@ -26,9 +32,6 @@ func _ready() -> void:
 
 func newDay() -> void:
 	isMorning = true
-
-func yep() -> void:
-	print("yep")
 
 func _physics_process(_delta: float) -> void:
 	shouldRayShow = !isRaining && isOutside
