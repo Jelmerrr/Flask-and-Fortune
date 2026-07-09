@@ -1,18 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw6yq4gb6t4dw"]
+[gd_scene load_steps=6 format=3 uid="uid://cw6yq4gb6t4dw"]
 
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="1_l0al7"]
 [ext_resource type="Script" uid="uid://raq7davc47j7" path="res://Scripts/Scenes/SceneHandlerController.gd" id="2_ytd33"]
 [ext_resource type="PackedScene" uid="uid://c8428k051oqmk" path="res://Scenes/WorldScenes/FeylornCityScene.tscn" id="3_go48i"]
-[ext_resource type="Script" uid="uid://vjf41hvbmgn3" path="res://Scripts/Visual/DayNightModulateController.gd" id="4_tc10a"]
 [ext_resource type="PackedScene" uid="uid://egbwh7so3u76" path="res://Scenes/Visuals/WorldVFXController.tscn" id="5_vg43m"]
-
-[sub_resource type="Gradient" id="Gradient_pi6qo"]
-offsets = PackedFloat32Array(0, 0.3580247, 0.48765433, 0.63580245, 0.74691355, 0.9074074)
-colors = PackedColorArray(0.33416107, 0.33297607, 0.6490966, 1, 0.6626097, 0.4584695, 0.8855568, 1, 0.8790204, 0.67566216, 0.87423456, 1, 0.9513301, 0.7919856, 0.7733818, 1, 0.9537527, 0.93568176, 0.86529756, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_axpmp"]
-gradient = SubResource("Gradient_pi6qo")
-use_hdr = true
 
 [sub_resource type="Environment" id="Environment_7anny"]
 background_mode = 3
@@ -64,11 +55,6 @@ autowrap_mode = 2
 
 [node name="Scene Handler" type="Node2D" parent="."]
 script = ExtResource("2_ytd33")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Scene Handler"]
-color = Color(0.24567527, 0.3414838, 0.7108614, 1)
-script = ExtResource("4_tc10a")
-gradient = SubResource("GradientTexture1D_axpmp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scene Handler"]
 environment = SubResource("Environment_7anny")

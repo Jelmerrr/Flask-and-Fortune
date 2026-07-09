@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://egbwh7so3u76"]
+[gd_scene load_steps=8 format=3 uid="uid://egbwh7so3u76"]
 
 [ext_resource type="Script" uid="uid://llvx5xypux0l" path="res://Scripts/Visual/Lighting/WorldVFXControllergd.gd" id="1_1wfua"]
 [ext_resource type="Shader" uid="uid://bxsmbdfe2ac0t" path="res://Shaders/Global Shaders/GodRaysShader.gdshader" id="1_7j37i"]
 [ext_resource type="Script" uid="uid://di81m4m6ornt6" path="res://Scripts/Visual/Lighting/GodRaysController.gd" id="2_1wfua"]
+[ext_resource type="Script" uid="uid://vjf41hvbmgn3" path="res://Scripts/Visual/DayNightModulateController.gd" id="4_voqvk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_voqvk"]
 shader = ExtResource("1_7j37i")
@@ -19,6 +20,14 @@ shader_parameter/ray2_intensity = 0.462000021945
 shader_parameter/color = Color(1, 0.9019608, 0.6509804, 0)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
+
+[sub_resource type="Gradient" id="Gradient_pi6qo"]
+offsets = PackedFloat32Array(0, 0.3580247, 0.48765433, 0.63580245, 0.74691355, 0.9074074)
+colors = PackedColorArray(0.33416107, 0.33297607, 0.6490966, 1, 0.6626097, 0.4584695, 0.8855568, 1, 0.8790204, 0.67566216, 0.87423456, 1, 0.9513301, 0.7919856, 0.7733818, 1, 0.9537527, 0.93568176, 0.86529756, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_skq3j"]
+gradient = SubResource("Gradient_pi6qo")
+use_hdr = true
 
 [node name="WorldVFXController" type="Node2D"]
 script = ExtResource("1_1wfua")
@@ -41,3 +50,8 @@ morningTwilightLength = 0.4
 rayColor = Color(1, 0.9019608, 0.6509804, 0.5882353)
 
 [node name="Clouds" type="Node" parent="CanvasLayer"]
+
+[node name="DayNightModulate" type="CanvasModulate" parent="."]
+color = Color(0.24567527, 0.3414838, 0.7108614, 1)
+script = ExtResource("4_voqvk")
+gradient = SubResource("GradientTexture1D_skq3j")
