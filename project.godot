@@ -35,8 +35,9 @@ GlobalTimeOfDayController="*res://Scripts/CoreUtils/Globals/GlobalTimeOfDayContr
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 
@@ -76,11 +77,9 @@ OpenCraftingUI={
 ]
 }
 
-[physics]
-
-common/physics_interpolation=true
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

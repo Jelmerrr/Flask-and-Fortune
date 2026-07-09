@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://owllymvjumjc"]
+[gd_scene load_steps=18 format=3 uid="uid://owllymvjumjc"]
 
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_i7kff"]
 [ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_ucv7s"]
 [ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="2_you6g"]
 [ext_resource type="Texture2D" uid="uid://cydveghsaqqa8" path="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree1.png" id="3_you6g"]
+[ext_resource type="Texture2D" uid="uid://chlk5qxxacot8" path="res://Assets/Particles/LeafParticle.png" id="5_lddam"]
+[ext_resource type="Shader" uid="uid://djvo4vurinl5l" path="res://Shaders/Sprite Processing Shaders/CleanEdge.gdshader" id="5_ybgtj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ucv7s"]
 
@@ -17,7 +19,7 @@ shader = ExtResource("2_you6g")
 shader_parameter/enableWind = true
 shader_parameter/enableOutline = true
 shader_parameter/render_noise = false
-shader_parameter/framerate = 7.0
+shader_parameter/framerate = 8.0
 shader_parameter/quantised = true
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_lddam")
 shader_parameter/amplitude = 0.04
@@ -40,6 +42,38 @@ size = Vector2(60, 86)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ucv7s"]
 radius = 4.0
 height = 14.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ybgtj"]
+shader = ExtResource("5_ybgtj")
+shader_parameter/highestColor = Vector3(1, 1, 1)
+shader_parameter/amount = 40
+shader_parameter/similarThreshold = 0.0
+shader_parameter/lineWidth = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ucv7s"]
+offsets = PackedFloat32Array(0, 0.24583334, 0.75, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lddam"]
+gradient = SubResource("Gradient_ucv7s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucv7s"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2, 25, 1)
+direction = Vector3(0.8, 0.5, 0)
+spread = 20.0
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 49.99998
+gravity = Vector3(0, 12, 0)
+linear_accel_min = 1.9999977
+linear_accel_max = 7.9999976
+tangential_accel_min = -30.000002
+tangential_accel_max = 4.9999976
+color_ramp = SubResource("GradientTexture1D_lddam")
 
 [node name="BirchTree" type="Node2D"]
 y_sort_enabled = true
@@ -70,6 +104,19 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_ucv7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ybgtj")
+position = Vector2(0, -86)
+amount = 3
+texture = ExtResource("5_lddam")
+lifetime = 2.0
+randomness = 1.0
+fixed_fps = 24
+interpolate = false
+visibility_rect = Rect2(-200, -200, 400, 400)
+process_material = SubResource("ParticleProcessMaterial_ucv7s")
 
 [connection signal="mouse_entered" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="GatherObjectSprite/GatherMouseArea" to="." method="_on_gather_mouse_area_mouse_exited"]
