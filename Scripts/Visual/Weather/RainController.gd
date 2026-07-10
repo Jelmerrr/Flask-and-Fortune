@@ -1,31 +1,28 @@
 extends CanvasLayer
 
-@export var isOutside: bool
+var isOutside: bool
 
-@export var isRaining: bool:
+var isRaining: bool:
 	set(value):
 		isRaining = value
-		GlobalSignalBus.isRaining.emit(isRaining)
-		if initialized:
-			if value:
-				AudioController.PlaySFX(preload("uid://8wx74w5vnf4y"), 0)
-			else:
-				AudioController.StopSFX(preload("uid://8wx74w5vnf4y"))
-
-var initialized: bool = false #Safeguard to prevent systems loading before others
+		if value:
+			AudioController.PlaySFX(preload("uid://8wx74w5vnf4y"), 0, 5)
+		else:
+			AudioController.StopSFX(preload("uid://8wx74w5vnf4y"))
 
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 @onready var color_rect: ColorRect = $ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalSignalBus.isOutside.connect(changeState)
-	if isRaining:
-		AudioController.PlaySFX(preload("uid://8wx74w5vnf4y"), 0)
-	initialized = true
+	GlobalSignalBus.isOutside.connect(changeOutsideState)
+	GlobalSignalBus.isRaining.connect(updateRainSignal)
 
-func changeState(state: bool):
+func changeOutsideState(state: bool):
 	isOutside = state
+
+func updateRainSignal(state: bool):
+	isRaining = state
 
 func _physics_process(delta: float) -> void:
 	if isOutside && isRaining:

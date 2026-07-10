@@ -44,11 +44,11 @@ func _input(event):
 			gather_duration_timer.start()
 			
 			UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Gathering
-			AudioController.PlaySFX(preload("uid://6uhxdfup02ac"), randi_range(0, 15))
+			AudioController.PlaySFX(preload("uid://6uhxdfup02ac"), randi_range(0, 15), 0)
 
 func _on_gather_duration_timer_timeout() -> void:
 	#Once the timer runs out run finish gather logic
-	AudioController.PlaySFX(preload("uid://1cv8ihko1fky"), 0)
+	AudioController.PlaySFX(preload("uid://1cv8ihko1fky"), 0, 0)
 	AudioController.StopSFX(preload("uid://6uhxdfup02ac"))
 	UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
 	GatherResource()

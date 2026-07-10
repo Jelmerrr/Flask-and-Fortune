@@ -6,16 +6,19 @@ const SFX_PLAYER = preload("uid://dtvxwurcomani")
 @onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 @onready var sfx_channels: Node2D = $"SFX Channels"
 
+var musicVolumeDB = 0
+var sfxVolumeDB = 0
+
 func _ready() -> void:
 	PlayMusic()
 
-func FadeIn(audioPlayer: AudioStreamPlayer2D):
+func FadeIn(audioPlayer: AudioStreamPlayer2D, volumeTarget: int, fadeLength: float):
 	audioPlayer.volume_db = -100
-	VolumeTween(audioPlayer, 0, 0.5)
+	await VolumeTween(audioPlayer, volumeTarget, fadeLength)
 
-func FadeOut(audioPlayer: AudioStreamPlayer2D):
+func FadeOut(audioPlayer: AudioStreamPlayer2D, fadeLength: float):
 	audioPlayer.volume_db = 0
-	await VolumeTween(audioPlayer, -100, 0.5).finished
+	await VolumeTween(audioPlayer, -100, fadeLength).finished
 	audioPlayer.stop()
 
 func VolumeTween(audioPlayer: AudioStreamPlayer2D, to: float, duration: float):
@@ -23,6 +26,7 @@ func VolumeTween(audioPlayer: AudioStreamPlayer2D, to: float, duration: float):
 	fadeTween = get_tree().create_tween()
 	fadeTween.tween_property(audioPlayer, "volume_db", to, duration)
 	fadeTween.set_ease(Tween.EASE_OUT)
+	fadeTween.set_trans(Tween.TRANS_EXPO)
 	return fadeTween
 
 func PlayMusic() -> void:
@@ -31,19 +35,24 @@ func PlayMusic() -> void:
 	
 	if !music_player.playing:
 		music_player.stream = preload("uid://m2b0xgpj324s") #preload("uid://cb66p1ejyerpc")
-		FadeIn(music_player)
+		FadeIn(music_player, musicVolumeDB, 0.5)
 		music_player.play()
 
-func PlaySFX(AudioFile: AudioStreamWAV, offset: int) -> void:
+func PlaySFX(AudioFile: AudioStreamWAV, offset: int, fadeInLength: int) -> void:
 	var instance = SFX_PLAYER.instantiate()
+	var shouldFade: bool = false
 	instance.stream = AudioFile
 	instance.offset = offset
+	if !fadeInLength <= 0:
+		shouldFade = true
 	sfx_channels.add_child.call_deferred(instance)
+	if shouldFade:
+		FadeIn(instance, sfxVolumeDB, fadeInLength)
 
 func StopSFX(AudioFile: AudioStreamWAV) -> void:
 	for player in sfx_channels.get_children():
 		if player.stream == AudioFile:
-			FadeOut(player)
+			FadeOut(player, 0.5)
 
 func IsSooundAlreadyPlaying(AudioFile: AudioStreamWAV) -> bool:
 	for player in sfx_channels.get_children():

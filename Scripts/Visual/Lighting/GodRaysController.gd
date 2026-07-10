@@ -17,7 +17,6 @@ var shouldRayShow: bool = false:
 var isMorning: bool = true
 
 var isOutside: bool = false
-var isRaining: bool = false
 
 var tweenDuration: float
 
@@ -28,13 +27,12 @@ func _ready() -> void:
 	GlobalSignalBus.newDay.connect(newDay)
 	tweenDuration = ((asin((2 * morningTwilightLength) - 1) + 0.5 * PI) / GlobalTimeOfDayController.timeScaleMultiplier) / 4
 	GlobalSignalBus.isOutside.connect(changeOutsideState)
-	GlobalSignalBus.isRaining.connect(changeRainingState)
 
 func newDay() -> void:
 	isMorning = true
 
 func _physics_process(_delta: float) -> void:
-	shouldRayShow = !isRaining && isOutside
+	shouldRayShow = UtilsGlobalEnums.weatherState.Sunny && isOutside
 	var value = (sin(GlobalTimeOfDayController.time - 0.5 * PI) + 1.0) * 0.5
 	if isMorning && shouldRayShow:
 		if value >= morningTwilightTime && value <= (morningTwilightLength + morningTwilightTime) && !rayVisible:
@@ -62,6 +60,3 @@ func setShaderColorParam(value: Color):
 
 func changeOutsideState(state: bool):
 	isOutside = state
-
-func changeRainingState(state: bool):
-	isRaining = state

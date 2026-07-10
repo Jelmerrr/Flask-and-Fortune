@@ -24,3 +24,9 @@ enum playerState{
 	Gathering,
 	Crafting,
 }
+
+enum weatherState{
+	Sunny,
+	Raining,
+	Fog
+}
