@@ -1,5 +1,9 @@
 extends Node
 
+#Inteval for each weather cycle attempt
+var weatherCycleWaitIntervalMin: float = 60.0 #in seconds
+var weatherCycleWaitIntervalMax: float = 180.0 #in seconds
+
 var currentWeather: UtilsGlobalEnums.weatherState:
 	set(value):
 		currentWeather = value
@@ -16,11 +20,10 @@ func sendGlobalWeatherStateSignals(newWeather: UtilsGlobalEnums.weatherState) ->
 			pass
 		UtilsGlobalEnums.weatherState.Raining:
 			GlobalSignalBus.isRaining.emit(true)
-			GlobalSignalBus.isOutside.emit(true)
-		UtilsGlobalEnums.weatherState.Fog:
-			#do some foggy stuf here in future
 			pass
 
 func _ready() -> void:
-	await get_tree().create_timer(5).timeout
-	changeWeather(UtilsGlobalEnums.weatherState.Raining)
+	startWeatherCycle()
+
+func startWeatherCycle() -> void:
+	await get_tree().create_timer(weatherCycleWaitIntervalMin).timeout

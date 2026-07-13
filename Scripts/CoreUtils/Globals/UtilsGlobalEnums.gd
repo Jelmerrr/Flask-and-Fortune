@@ -28,5 +28,11 @@ enum playerState{
 enum weatherState{
 	Sunny,
 	Raining,
-	Fog
+}
+
+enum currentSeason{
+	Sprint,
+	Summer,
+	Autumn,
+	Winter,
 }
