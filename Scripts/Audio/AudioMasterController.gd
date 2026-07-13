@@ -22,7 +22,6 @@ func FadeOut(audioPlayer: AudioStreamPlayer2D, fadeLength: float):
 	audioPlayer.stop()
 
 func VolumeTween(audioPlayer: AudioStreamPlayer2D, to: float, duration: float):
-	if fadeTween: fadeTween.kill()
 	fadeTween = get_tree().create_tween()
 	fadeTween.tween_property(audioPlayer, "volume_db", to, duration)
 	fadeTween.set_ease(Tween.EASE_OUT)
