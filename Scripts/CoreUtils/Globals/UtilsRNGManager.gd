@@ -40,6 +40,7 @@ func weightedLootTable(lootTable: LootTableResource) -> Dictionary[ItemResource,
 	return result
 
 func percentChance(percentage) -> bool:
+	percentage = clamp(percentage, 0, 100)
 	if rng.randi_range(1, 100) <= percentage:
 		return true
 	return false

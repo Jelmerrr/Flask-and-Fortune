@@ -30,8 +30,8 @@ enum weatherState{
 	Raining,
 }
 
-enum currentSeason{
-	Sprint,
+enum seasons{
+	Spring,
 	Summer,
 	Autumn,
 	Winter,
