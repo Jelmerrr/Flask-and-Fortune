@@ -41,7 +41,6 @@ func weatherCycle() -> void:
 		var currentSeason = UtilsGlobalEnums.seasons.keys()[UtilsGlobalVariables.currentSeason]
 		selectedWeather = UtilsRngManager.rng.rand_weighted(weatherChanceDict[currentSeason]) as UtilsGlobalEnums.weatherState
 		changeWeather(selectedWeather)
-		print(UtilsGlobalEnums.weatherState.keys()[selectedWeather])
 	resetWeatherCycle()
 
 func resetWeatherCycle() -> void:
@@ -52,5 +51,4 @@ func shouldRollNewWeather() -> bool:
 	#TODO: Add some more complex algorithm here like accounting for season changes or a logarithmic function.
 	if UtilsRngManager.percentChance(50):
 		return true
-	print("Weather stays the same")
 	return false
