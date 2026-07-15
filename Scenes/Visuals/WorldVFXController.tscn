@@ -105,6 +105,7 @@ script = ExtResource("4_skq3j")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Rain"]
 material = SubResource("CanvasItemMaterial_voqvk")
 amount = 600
+amount_ratio = 0.0
 preprocess = 0.5
 fixed_fps = 24
 interpolate = false
@@ -118,7 +119,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.7058824)
+color = Color(0, 0, 0, 0)
 
 [node name="DayNightModulate" type="CanvasModulate" parent="."]
 color = Color(0.24567527, 0.3414838, 0.7108614, 1)

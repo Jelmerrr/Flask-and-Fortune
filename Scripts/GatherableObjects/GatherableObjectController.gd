@@ -49,7 +49,7 @@ func _input(event):
 func _on_gather_duration_timer_timeout() -> void:
 	#Once the timer runs out run finish gather logic
 	AudioController.PlaySFX(preload("uid://1cv8ihko1fky"), 0, 0)
-	AudioController.StopSFX(preload("uid://6uhxdfup02ac"))
+	AudioController.StopSFX(preload("uid://6uhxdfup02ac"), 0.5)
 	UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
 	GatherResource()
 

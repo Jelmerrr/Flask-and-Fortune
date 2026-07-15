@@ -37,7 +37,7 @@ func PlayMusic() -> void:
 		FadeIn(music_player, musicVolumeDB, 0.5)
 		music_player.play()
 
-func PlaySFX(AudioFile: AudioStreamWAV, offset: int, fadeInLength: int) -> void:
+func PlaySFX(AudioFile: AudioStreamWAV, offset: int, fadeInLength: float) -> void:
 	var instance = SFX_PLAYER.instantiate()
 	var shouldFade: bool = false
 	instance.stream = AudioFile
@@ -48,10 +48,10 @@ func PlaySFX(AudioFile: AudioStreamWAV, offset: int, fadeInLength: int) -> void:
 	if shouldFade:
 		FadeIn(instance, sfxVolumeDB, fadeInLength)
 
-func StopSFX(AudioFile: AudioStreamWAV) -> void:
+func StopSFX(AudioFile: AudioStreamWAV, fadeOutLength: float) -> void:
 	for player in sfx_channels.get_children():
 		if player.stream == AudioFile:
-			FadeOut(player, 0.5)
+			FadeOut(player, fadeOutLength)
 
 func IsSooundAlreadyPlaying(AudioFile: AudioStreamWAV) -> bool:
 	for player in sfx_channels.get_children():
