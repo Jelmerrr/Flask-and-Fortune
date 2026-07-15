@@ -32,7 +32,7 @@ func newDay() -> void:
 	isMorning = true
 
 func _physics_process(_delta: float) -> void:
-	shouldRayShow = UtilsGlobalEnums.weatherState.Sunny && isOutside
+	shouldRayShow = UtilsGlobalVariables.currentWeather == UtilsGlobalEnums.weatherState.Sunny && isOutside
 	var value = (sin(GlobalTimeOfDayController.time - 0.5 * PI) + 1.0) * 0.5
 	if isMorning && shouldRayShow:
 		if value >= morningTwilightTime && value <= (morningTwilightLength + morningTwilightTime) && !rayVisible:
