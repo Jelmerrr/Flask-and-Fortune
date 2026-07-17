@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dajnvrvcsl7cm"]
+
+[ext_resource type="Shader" uid="uid://dcv8xv4qq5aao" path="res://Shaders/Sprite Processing Shaders/WindShader.gdshader" id="1_lcb4b"]
+[ext_resource type="Texture2D" uid="uid://upwk66jhx4ky" path="res://Assets/Sprites/World Object Sprites/Clutter/Pots & Plants/Potted Plant Clutter 1.png" id="2_ph10a"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dcggn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wqq2"]
+shader = ExtResource("1_lcb4b")
+shader_parameter/enableWind = true
+shader_parameter/render_noise = false
+shader_parameter/framerate = 8.0
+shader_parameter/quantised = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_dcggn")
+shader_parameter/amplitude = 0.2999999932944
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0000000149012
+shader_parameter/rotation_pivot = Vector2(0.5, 0.8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcb4b"]
+radius = 4.0
+
+[node name="Bonsai Tree 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8wqq2")
+texture = ExtResource("2_ph10a")
+offset = Vector2(0, -30)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_lcb4b")

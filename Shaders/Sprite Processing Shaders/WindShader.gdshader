@@ -3,7 +3,7 @@ shader_type canvas_item;
 uniform bool enableWind = true;
 
 uniform bool render_noise = false;
-uniform float framerate = 5.0; // Framerate for worldspace and viewspace grass rotation
+uniform float framerate = 8.0; // Framerate for worldspace and viewspace grass rotation
 uniform bool quantised = true; // Toggle quantised framerate
 uniform sampler2D noise_texture : repeat_enable; // set in inspector
 uniform float amplitude : hint_range(0.0, 0.5, 0.01) = 0.2;

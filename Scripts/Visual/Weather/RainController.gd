@@ -23,6 +23,9 @@ var isRaining: bool
 func _ready() -> void:
 	GlobalSignalBus.changeWeather.connect(weatherProcess)
 	GlobalSignalBus.isOutside.connect(changeOutsideState)
+	if !isRaining:
+		gpu_particles_2d.amount_ratio = 0.0
+		gpu_particles_2d.emitting = false
 
 func changeOutsideState(state: bool):
 	isOutside = state
@@ -32,12 +35,14 @@ func weatherProcess(weather: UtilsGlobalEnums.weatherState) -> void:
 		if !isRaining:
 			AudioController.PlaySFX(preload("uid://8wx74w5vnf4y"), 0, rainStartDuration)
 			rectTween(color_rect, rainActiveRectColor, rainStartDuration)
+			gpu_particles_2d.emitting = true
 			particleTween(gpu_particles_2d, 1.0, rainStartDuration)
 			isRaining = true
 	else:
 		AudioController.StopSFX(preload("uid://8wx74w5vnf4y"), rainEndDuration)
 		rectTween(color_rect, rainDeactiveRectColor, rainEndDuration)
-		particleTween(gpu_particles_2d, 0.0, rainEndDuration)
+		await particleTween(gpu_particles_2d, 0.0, rainEndDuration)
+		gpu_particles_2d.emitting = false
 		isRaining = false
 
 func _physics_process(_delta: float) -> void:

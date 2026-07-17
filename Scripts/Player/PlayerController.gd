@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed = 80 #Speed in pixels/sec
-var accel = 32 #Acceleration in pixel/sec
+var accel = 16 #Acceleration in pixel/sec
 
 func _ready() -> void:
 	UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
@@ -19,8 +19,6 @@ func _physics_process(delta):
 		if velocity.x <= 0:
 			animated_sprite_2d.flip_h=direction.x
 		#Round position if moving diagonal for smoother camera
-		if direction.x != 0.0 && direction.y != 0.0:
-			position = round(position)
-		#Adjust object position
 		move_and_slide()
+		position = round(position)
 		UtilsGlobalVariables.currentPlayerPos = position
