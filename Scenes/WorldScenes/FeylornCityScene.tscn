@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene load_steps=15 format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="Script" uid="uid://bi7eqy4c87hcx" path="res://Scripts/Scenes/IndividualSceneControllers/FeylornCityController.gd" id="1_ipc1c"]
@@ -14,6 +14,17 @@ size = Vector2(22, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2mip"]
 radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5mnq"]
+radius = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjv82"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpsar"]
+radius = 6.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pj6od"]
 radius = 13.0
@@ -95,13 +106,95 @@ position = Vector2(249, -79)
 [node name="Bonsai Tree 2" parent="." instance=ExtResource("8_p2mip")]
 position = Vector2(132, -79)
 
-[node name="World Collisions" type="StaticBody2D" parent="."]
+[node name="World Collisions" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World Collisions"]
+[node name="Lake" type="StaticBody2D" parent="World Collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Collisions/Lake"]
 position = Vector2(412, -339)
 shape = SubResource("CircleShape2D_p2mip")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World Collisions"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(445, -340)
+shape = SubResource("CircleShape2D_i5mnq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(460, -323)
+shape = SubResource("CapsuleShape2D_tjv82")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(469, -320)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(477, -319)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(426, -347)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(444, -344)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(438, -346)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(431, -347)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(456, -326)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(473, -320)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(479, -320)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(421, -348)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(422, -330)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(427, -330)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(431, -330)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(435, -331)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(438, -331)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(442, -331)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(446, -330)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="World Collisions/Lake"]
+position = Vector2(451, -329)
+shape = SubResource("CapsuleShape2D_gpsar")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World Collisions/Lake"]
 position = Vector2(485, -320)
 shape = SubResource("CircleShape2D_pj6od")
 
