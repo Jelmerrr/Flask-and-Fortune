@@ -101,11 +101,9 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_p2mip")
 
 [node name="Bonsai Tree 1" parent="." unique_id=2095886448 instance=ExtResource("8_p2mip")]
-visible = false
 position = Vector2(249, -79)
 
 [node name="Bonsai Tree 2" parent="." unique_id=1325260150 instance=ExtResource("8_p2mip")]
-visible = false
 position = Vector2(132, -79)
 
 [node name="World Collisions" type="Node2D" parent="." unique_id=671590271]
@@ -199,8 +197,5 @@ shape = SubResource("CapsuleShape2D_gpsar")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1841575888]
 position = Vector2(485, -320)
 shape = SubResource("CircleShape2D_pj6od")
-
-[node name="Bonsai Tree 3" parent="." unique_id=1493098398 instance=ExtResource("8_p2mip")]
-position = Vector2(247, -81)
 
 [connection signal="body_entered" from="Transitions/Area2D" to="Transitions/Area2D" method="_on_body_entered"]
