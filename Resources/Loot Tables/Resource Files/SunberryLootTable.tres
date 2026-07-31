@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTableResource" load_steps=7 format=3 uid="uid://bwjrd0nq8ggp2"]
+[gd_resource type="Resource" script_class="LootTableResource" format=3 uid="uid://bwjrd0nq8ggp2"]
 
 [ext_resource type="Script" uid="uid://dtukklmctt8ar" path="res://Resources/Loot Tables/LootTableEntryResource.gd" id="1_333ib"]
 [ext_resource type="Resource" uid="uid://bjdbyd61u0qx2" path="res://Resources/Items/Resource Files/SunberryItemResource.tres" id="2_lbkma"]

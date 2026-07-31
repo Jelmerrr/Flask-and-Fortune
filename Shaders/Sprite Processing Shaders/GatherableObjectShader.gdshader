@@ -78,7 +78,9 @@ void fragment() {
 	vec2 result_uvs = mix(UV, rotated_uvs, dist);
 
 	// output color
+	if (enableWind) {
 	COLOR = texture(TEXTURE, result_uvs);
+	}
 
 	// optional, preview noise texture for debugging
 	if (render_noise) {

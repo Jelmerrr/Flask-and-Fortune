@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8428k051oqmk"]
+[gd_scene format=3 uid="uid://c8428k051oqmk"]
 
 [ext_resource type="PackedScene" uid="uid://b8faxx5uxnkkb" path="res://Scenes/Placeholder/player_controller.tscn" id="1_3ileo"]
 [ext_resource type="Script" uid="uid://bi7eqy4c87hcx" path="res://Scripts/Scenes/IndividualSceneControllers/FeylornCityController.gd" id="1_ipc1c"]
@@ -29,173 +29,178 @@ height = 26.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pj6od"]
 radius = 13.0
 
-[node name="Feylorn City" type="Node2D"]
+[node name="Feylorn City" type="Node2D" unique_id=1231583608]
 y_sort_enabled = true
 script = ExtResource("1_ipc1c")
 
-[node name="PlayerController" parent="." instance=ExtResource("1_3ileo")]
+[node name="PlayerController" parent="." unique_id=1072786456 instance=ExtResource("1_3ileo")]
 y_sort_enabled = true
 
-[node name="Visual Camera" type="Camera2D" parent="PlayerController"]
+[node name="Visual Camera" type="Camera2D" parent="PlayerController" unique_id=2045648825]
 y_sort_enabled = true
 editor_draw_screen = false
 
-[node name="Camera Size Drawer" type="Camera2D" parent="PlayerController/Visual Camera"]
+[node name="Camera Size Drawer" type="Camera2D" parent="PlayerController/Visual Camera" unique_id=1498727145]
 y_sort_enabled = true
 enabled = false
 zoom = Vector2(2, 2)
 
-[node name="ExampleStreet" type="Sprite2D" parent="."]
+[node name="ExampleStreet" type="Sprite2D" parent="." unique_id=1391901301]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(181, -236)
 texture = ExtResource("3_p2mip")
 
-[node name="Player Atelier" parent="." instance=ExtResource("6_42avm")]
+[node name="Player Atelier" parent="." unique_id=498260577 instance=ExtResource("6_42avm")]
 position = Vector2(275, -259)
 
-[node name="Gatherable Objects" type="Node2D" parent="."]
+[node name="Gatherable Objects" type="Node2D" parent="." unique_id=1500259612]
 y_sort_enabled = true
 
-[node name="BirchTree" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
+[node name="BirchTree" parent="Gatherable Objects" unique_id=2014077970 instance=ExtResource("5_y0wu3")]
 position = Vector2(359, -254)
 
-[node name="BirchTree4" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
+[node name="BirchTree4" parent="Gatherable Objects" unique_id=436855865 instance=ExtResource("5_y0wu3")]
 position = Vector2(371, -375)
 
-[node name="BirchTree2" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
+[node name="BirchTree2" parent="Gatherable Objects" unique_id=1844233044 instance=ExtResource("5_y0wu3")]
 position = Vector2(460, -187)
 
-[node name="BirchTree3" parent="Gatherable Objects" instance=ExtResource("5_y0wu3")]
+[node name="BirchTree3" parent="Gatherable Objects" unique_id=2037499652 instance=ExtResource("5_y0wu3")]
 position = Vector2(278, -300)
 
-[node name="Sunberry" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry" parent="Gatherable Objects" unique_id=1561437051 instance=ExtResource("4_nfcxt")]
 position = Vector2(-34, -3)
 
-[node name="Sunberry3" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry3" parent="Gatherable Objects" unique_id=69280065 instance=ExtResource("4_nfcxt")]
 position = Vector2(368, -289)
 
-[node name="Sunberry5" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry5" parent="Gatherable Objects" unique_id=1863365378 instance=ExtResource("4_nfcxt")]
 position = Vector2(431, -276)
 
-[node name="Sunberry6" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry6" parent="Gatherable Objects" unique_id=1211465485 instance=ExtResource("4_nfcxt")]
 position = Vector2(439, -227)
 
-[node name="Sunberry7" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry7" parent="Gatherable Objects" unique_id=5393906 instance=ExtResource("4_nfcxt")]
 position = Vector2(415, -372)
 
-[node name="Sunberry4" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry4" parent="Gatherable Objects" unique_id=716202935 instance=ExtResource("4_nfcxt")]
 position = Vector2(289, -292)
 
-[node name="Sunberry2" parent="Gatherable Objects" instance=ExtResource("4_nfcxt")]
+[node name="Sunberry2" parent="Gatherable Objects" unique_id=371777746 instance=ExtResource("4_nfcxt")]
 position = Vector2(36, -3)
 
-[node name="Transitions" type="Node2D" parent="."]
+[node name="Transitions" type="Node2D" parent="." unique_id=2120977665]
 
-[node name="Area2D" type="Area2D" parent="Transitions"]
+[node name="Area2D" type="Area2D" parent="Transitions" unique_id=1748968272]
 position = Vector2(229, -86)
 script = ExtResource("7_86fk4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Area2D" unique_id=872351663]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_p2mip")
 
-[node name="Bonsai Tree 1" parent="." instance=ExtResource("8_p2mip")]
+[node name="Bonsai Tree 1" parent="." unique_id=2095886448 instance=ExtResource("8_p2mip")]
+visible = false
 position = Vector2(249, -79)
 
-[node name="Bonsai Tree 2" parent="." instance=ExtResource("8_p2mip")]
+[node name="Bonsai Tree 2" parent="." unique_id=1325260150 instance=ExtResource("8_p2mip")]
+visible = false
 position = Vector2(132, -79)
 
-[node name="World Collisions" type="Node2D" parent="."]
+[node name="World Collisions" type="Node2D" parent="." unique_id=671590271]
 
-[node name="Lake" type="StaticBody2D" parent="World Collisions"]
+[node name="Lake" type="StaticBody2D" parent="World Collisions" unique_id=369441805]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1399647537]
 position = Vector2(412, -339)
 shape = SubResource("CircleShape2D_p2mip")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1111959780]
 position = Vector2(445, -340)
 shape = SubResource("CircleShape2D_i5mnq")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=479039139]
 position = Vector2(460, -323)
 shape = SubResource("CapsuleShape2D_tjv82")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1975463669]
 position = Vector2(469, -320)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=223525462]
 position = Vector2(477, -319)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1587995514]
 position = Vector2(426, -347)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1654739604]
 position = Vector2(444, -344)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=140167872]
 position = Vector2(438, -346)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=30646337]
 position = Vector2(431, -347)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=242023440]
 position = Vector2(456, -326)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1435370438]
 position = Vector2(473, -320)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=170618583]
 position = Vector2(479, -320)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1445126535]
 position = Vector2(421, -348)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=322518697]
 position = Vector2(422, -330)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=869937708]
 position = Vector2(427, -330)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=817582417]
 position = Vector2(431, -330)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1426884039]
 position = Vector2(435, -331)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1529085890]
 position = Vector2(438, -331)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=841704090]
 position = Vector2(442, -331)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=446868981]
 position = Vector2(446, -330)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1756835059]
 position = Vector2(451, -329)
 shape = SubResource("CapsuleShape2D_gpsar")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World Collisions/Lake"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World Collisions/Lake" unique_id=1841575888]
 position = Vector2(485, -320)
 shape = SubResource("CircleShape2D_pj6od")
+
+[node name="Bonsai Tree 3" parent="." unique_id=1493098398 instance=ExtResource("8_p2mip")]
+position = Vector2(247, -81)
 
 [connection signal="body_entered" from="Transitions/Area2D" to="Transitions/Area2D" method="_on_body_entered"]
