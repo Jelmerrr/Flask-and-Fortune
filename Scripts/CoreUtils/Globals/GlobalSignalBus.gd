@@ -10,3 +10,6 @@ signal changeWeather(weatherState: UtilsGlobalEnums.weatherState)
 signal isRaining(bool) #Emit this whenever weather changes to rain, used for lighting and visuals.
 
 signal isOutside(bool) #Emit this whenever the player changes from inside to outside, used for lighting and visuals.
+
+#UI based signals
+signal changeSelectedHotbarSlotUI()
