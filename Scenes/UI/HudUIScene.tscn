@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0c50ic8sjvib" path="res://Resources/UI/Hud/ItemHUDSelected.png" id="1_3hlyy"]
 [ext_resource type="Texture2D" uid="uid://cuyxnujrd0mbu" path="res://Resources/UI/Hud/ItemHUDUnselected.png" id="2_mmgws"]
+[ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_u3v1i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
 
@@ -51,52 +52,117 @@ size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_constants/separation = -24
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=934843000]
+[node name="Slot 1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=934843000]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=1637661636]
+[node name="Slot 1 Texture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 1" unique_id=1637661636]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("1_3hlyy")
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557625070]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 1/Slot 1 Texture" unique_id=683945683]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 26.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0.99215686, 0.99607843, 0.8627451, 1)
+theme_override_fonts/normal_font = ExtResource("2_u3v1i")
+text = "1"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557625070]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1400124542]
+[node name="Slot 2 Texture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 2" unique_id=1400124542]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=101710018]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 2/Slot 2 Texture" unique_id=121758619]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 26.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0.99215686, 0.99607843, 0.8627451, 1)
+theme_override_fonts/normal_font = ExtResource("2_u3v1i")
+text = "2"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=101710018]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3" unique_id=1077228102]
+[node name="Slot 3 Texture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 3" unique_id=1077228102]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1713869594]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 3/Slot 3 Texture" unique_id=2139092310]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 26.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0.99215686, 0.99607843, 0.8627451, 1)
+theme_override_fonts/normal_font = ExtResource("2_u3v1i")
+text = "3"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1713869594]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4" unique_id=636967345]
+[node name="Slot 4 Texture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 4" unique_id=636967345]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=736841646]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 4/Slot 4 Texture" unique_id=1864748725]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 26.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0.99215686, 0.99607843, 0.8627451, 1)
+theme_override_fonts/normal_font = ExtResource("2_u3v1i")
+text = "4"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=736841646]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer5" unique_id=441101308]
+[node name="Slot 5 Texture" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 5" unique_id=441101308]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Slot 5/Slot 5 Texture" unique_id=197669509]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 26.0
+offset_bottom = 37.0
+theme_override_colors/default_color = Color(0.99215686, 0.99607843, 0.8627451, 1)
+theme_override_fonts/normal_font = ExtResource("2_u3v1i")
+text = "5"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
