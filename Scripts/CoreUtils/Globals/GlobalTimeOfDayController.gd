@@ -6,7 +6,7 @@ const MINNUTESINHOUR= 60
 var time: float = 0.0 #measured in minutes
 var precentOfDayPassed: float
 
-var dayDurationInMinutes: float = 1 #This controls the time it takes for 1 ingame day
+var dayDurationInMinutes: float = 15 #This controls the time it takes for 1 ingame day
 
 var dayDurationInDelta: float
 var inGameMinuteInDelta: float

@@ -3,8 +3,8 @@ extends Node
 var isWeatherActive: bool = true #master switch
 
 #Inteval for each weather cycle attempt
-var weatherCycleWaitIntervalMin: float = 60.0 #in seconds
-var weatherCycleWaitIntervalMax: float = 180.0 #in seconds
+var weatherCycleWaitIntervalMin: float = 300.0 #in seconds
+var weatherCycleWaitIntervalMax: float = 900.0 #in seconds
 
 var timeSinceLastWeatherRollAttempt: int = 0
 

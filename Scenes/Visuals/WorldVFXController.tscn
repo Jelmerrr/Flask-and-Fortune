@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://egbwh7so3u76"]
+[gd_scene format=3 uid="uid://egbwh7so3u76"]
 
 [ext_resource type="Script" uid="uid://llvx5xypux0l" path="res://Scripts/Visual/Lighting/WorldVFXControllergd.gd" id="1_1wfua"]
 [ext_resource type="Shader" uid="uid://bxsmbdfe2ac0t" path="res://Shaders/Global Shaders/GodRaysShader.gdshader" id="1_7j37i"]
@@ -77,14 +77,14 @@ colors = PackedColorArray(0.33416107, 0.33297607, 0.6490966, 1, 0.6626097, 0.458
 gradient = SubResource("Gradient_pi6qo")
 use_hdr = true
 
-[node name="WorldVFXController" type="Node2D"]
+[node name="WorldVFXController" type="Node2D" unique_id=1648893343]
 script = ExtResource("1_1wfua")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=937343437]
 
-[node name="GodRays" type="Node" parent="CanvasLayer"]
+[node name="GodRays" type="Node" parent="CanvasLayer" unique_id=240024216]
 
-[node name="GodRayRect" type="ColorRect" parent="CanvasLayer/GodRays"]
+[node name="GodRayRect" type="ColorRect" parent="CanvasLayer/GodRays" unique_id=1841763308]
 material = SubResource("ShaderMaterial_voqvk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,12 +97,12 @@ morningTwilightTime = 0.25
 morningTwilightLength = 0.4
 rayColor = Color(1, 0.9019608, 0.6509804, 0.5882353)
 
-[node name="Clouds" type="Node" parent="CanvasLayer"]
+[node name="Clouds" type="Node" parent="CanvasLayer" unique_id=212441560]
 
-[node name="Rain" type="CanvasLayer" parent="CanvasLayer"]
+[node name="Rain" type="CanvasLayer" parent="CanvasLayer" unique_id=1290136720]
 script = ExtResource("4_skq3j")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Rain"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Rain" unique_id=787060881]
 material = SubResource("CanvasItemMaterial_voqvk")
 amount = 600
 amount_ratio = 0.0
@@ -112,7 +112,7 @@ interpolate = false
 visibility_rect = Rect2(0, 0, 960, 540)
 process_material = SubResource("ParticleProcessMaterial_voqvk")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Rain"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Rain" unique_id=735974650]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,7 +121,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="DayNightModulate" type="CanvasModulate" parent="."]
+[node name="DayNightModulate" type="CanvasModulate" parent="." unique_id=1747877732]
 color = Color(0.24567527, 0.3414838, 0.7108614, 1)
 script = ExtResource("4_voqvk")
 gradient = SubResource("GradientTexture1D_voqvk")
