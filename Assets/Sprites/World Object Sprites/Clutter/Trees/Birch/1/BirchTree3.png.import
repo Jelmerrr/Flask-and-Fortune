@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuyxnujrd0mbu"
-path="res://.godot/imported/ItemHUDUnselected.png-b96dbf24d9d996b54bb100d89e4670e3.ctex"
+uid="uid://bwxv7mh0nq61k"
+path="res://.godot/imported/BirchTree3.png-8fd120e7cf5971acd13b733cc0d8e823.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/UI/Hud/ItemHUDUnselected.png"
-dest_files=["res://.godot/imported/ItemHUDUnselected.png-b96dbf24d9d996b54bb100d89e4670e3.ctex"]
+source_file="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree3.png"
+dest_files=["res://.godot/imported/BirchTree3.png-8fd120e7cf5971acd13b733cc0d8e823.ctex"]
 
 [params]
 

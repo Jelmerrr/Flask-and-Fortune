@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://owllymvjumjc"]
+[gd_scene format=3 uid="uid://owllymvjumjc"]
 
 [ext_resource type="Script" uid="uid://cqu4hlg3jlabm" path="res://Scripts/GatherableObjects/GatherableObjectController.gd" id="1_i7kff"]
 [ext_resource type="Resource" uid="uid://bulky6dnsram" path="res://Resources/Gatherable Objects/Resource Files/SunberryGatherableObject.tres" id="2_ucv7s"]
 [ext_resource type="Shader" uid="uid://dkgqn2x6tjfct" path="res://Shaders/Sprite Processing Shaders/GatherableObjectShader.gdshader" id="2_you6g"]
-[ext_resource type="Texture2D" uid="uid://cydveghsaqqa8" path="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree1.png" id="3_you6g"]
+[ext_resource type="Texture2D" uid="uid://bwxv7mh0nq61k" path="res://Assets/Sprites/World Object Sprites/Clutter/Trees/Birch/1/BirchTree3.png" id="4_ybgtj"]
 [ext_resource type="Texture2D" uid="uid://chlk5qxxacot8" path="res://Assets/Particles/LeafParticle.png" id="5_lddam"]
 [ext_resource type="Shader" uid="uid://djvo4vurinl5l" path="res://Shaders/Sprite Processing Shaders/CleanEdge.gdshader" id="5_ybgtj"]
 
@@ -72,37 +72,37 @@ tangential_accel_min = -30.000002
 tangential_accel_max = 4.9999976
 color_ramp = SubResource("GradientTexture1D_lddam")
 
-[node name="BirchTree" type="Node2D"]
+[node name="BirchTree" type="Node2D" unique_id=354067950]
 y_sort_enabled = true
 script = ExtResource("1_i7kff")
 gatherableData = ExtResource("2_ucv7s")
 
-[node name="GatherObjectSprite" type="Sprite2D" parent="."]
+[node name="GatherObjectSprite" type="Sprite2D" parent="." unique_id=1122527639]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_vrk6t")
-texture = ExtResource("3_you6g")
-offset = Vector2(0, -96)
+texture = ExtResource("4_ybgtj")
+offset = Vector2(0, -80)
 
-[node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite"]
+[node name="GatherMouseArea" type="Area2D" parent="GatherObjectSprite" unique_id=1344900486]
 
-[node name="GatherCollisionShape" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+[node name="GatherCollisionShape" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea" unique_id=1140788356]
 position = Vector2(0, -73)
 shape = SubResource("RectangleShape2D_hdb2t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GatherObjectSprite/GatherMouseArea" unique_id=2141653611]
 position = Vector2(1, -103)
 shape = SubResource("RectangleShape2D_ucv7s")
 
-[node name="GatherDurationTimer" type="Timer" parent="."]
+[node name="GatherDurationTimer" type="Timer" parent="." unique_id=701063395]
 one_shot = true
 
-[node name="Collisions" type="StaticBody2D" parent="."]
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=1897262536]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=1735295870]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_ucv7s")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1015480898]
 visible = false
 material = SubResource("ShaderMaterial_ybgtj")
 position = Vector2(0, -86)

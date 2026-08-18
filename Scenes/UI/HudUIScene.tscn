@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cyvte8ermpohl"]
 
 [ext_resource type="Script" uid="uid://boe7tymjyu24p" path="res://Scripts/UI/HotbarSlotUIController.gd" id="1_mmgws"]
-[ext_resource type="Texture2D" uid="uid://cuyxnujrd0mbu" path="res://Resources/UI/Hud/ItemHUDUnselected.png" id="2_mmgws"]
+[ext_resource type="Texture2D" uid="uid://cuyxnujrd0mbu" path="res://Assets/UI/Hud/ItemHUDUnselected.png" id="2_mmgws"]
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_u3v1i"]
+[ext_resource type="Texture2D" uid="uid://cwhypu008ey84" path="res://Assets/UI/Hud/PlayerUISprite.png" id="4_u3v1i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
 
@@ -167,3 +168,9 @@ text = "5"
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=158748279]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_u3v1i")
