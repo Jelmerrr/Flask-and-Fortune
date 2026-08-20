@@ -58,3 +58,7 @@ func IsSooundAlreadyPlaying(AudioFile: AudioStreamWAV) -> bool:
 		if player.stream == AudioFile:
 			return true
 	return false
+
+func playEvent(event: AudioEvent):
+	if event.eventType == UtilsGlobalEnums.audioEventTypes.SFX:
+		PlaySFX(event.audioFile[randi_range(0, event.audioFile.size() - 1)], event.offsetOverride, event.fadeInTime)

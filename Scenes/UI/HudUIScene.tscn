@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cuyxnujrd0mbu" path="res://Assets/UI/Hud/ItemHUDUnselected.png" id="2_mmgws"]
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_u3v1i"]
 [ext_resource type="Texture2D" uid="uid://cwhypu008ey84" path="res://Assets/UI/Hud/PlayerUISprite.png" id="4_u3v1i"]
+[ext_resource type="Script" uid="uid://brr6c7nhbtf8n" path="res://Scripts/UI/CraftingUIController.gd" id="5_v4b62"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
 
@@ -29,7 +30,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rub1x")
 
-[node name="Global UI Margin" type="MarginContainer" parent="Screen Panel Container" unique_id=1521590749]
+[node name="Quickslot HUD Margin" type="MarginContainer" parent="Screen Panel Container" unique_id=1521590749]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
@@ -37,34 +38,34 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Item Slot VBox Container" type="VBoxContainer" parent="Screen Panel Container/Global UI Margin" unique_id=1259705023]
+[node name="Item Slot VBox Container" type="VBoxContainer" parent="Screen Panel Container/Quickslot HUD Margin" unique_id=1259705023]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Item Slot Negative Space" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container" unique_id=2075236482]
+[node name="Item Slot Negative Space" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container" unique_id=2075236482]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fno7v")
 
-[node name="Item Slots Container" type="HBoxContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container" unique_id=5968540]
+[node name="Item Slots Container" type="HBoxContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container" unique_id=5968540]
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_constants/separation = -24
 script = ExtResource("1_mmgws")
 
-[node name="Slot 1" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container" unique_id=934843000]
+[node name="Slot 1" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container" unique_id=934843000]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="Slot 1 Texture" type="TextureRect" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 1" unique_id=1637661636]
+[node name="Slot 1 Texture" type="TextureRect" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 1" unique_id=1637661636]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 1/Slot 1 Texture" unique_id=683945683]
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 1/Slot 1 Texture" unique_id=683945683]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 24.0
@@ -77,17 +78,17 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Slot 2" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container" unique_id=1557625070]
+[node name="Slot 2" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container" unique_id=1557625070]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="Slot 2 Texture" type="TextureRect" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 2" unique_id=1400124542]
+[node name="Slot 2 Texture" type="TextureRect" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 2" unique_id=1400124542]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 2/Slot 2 Texture" unique_id=121758619]
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 2/Slot 2 Texture" unique_id=121758619]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 24.0
@@ -100,17 +101,17 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Slot 3" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container" unique_id=101710018]
+[node name="Slot 3" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container" unique_id=101710018]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="Slot 3 Texture" type="TextureRect" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 3" unique_id=1077228102]
+[node name="Slot 3 Texture" type="TextureRect" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 3" unique_id=1077228102]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 3/Slot 3 Texture" unique_id=2139092310]
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 3/Slot 3 Texture" unique_id=2139092310]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 24.0
@@ -123,17 +124,17 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Slot 4" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container" unique_id=1713869594]
+[node name="Slot 4" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container" unique_id=1713869594]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="Slot 4 Texture" type="TextureRect" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 4" unique_id=636967345]
+[node name="Slot 4 Texture" type="TextureRect" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 4" unique_id=636967345]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 4/Slot 4 Texture" unique_id=1864748725]
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 4/Slot 4 Texture" unique_id=1864748725]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 24.0
@@ -146,17 +147,17 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Slot 5" type="PanelContainer" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container" unique_id=736841646]
+[node name="Slot 5" type="PanelContainer" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container" unique_id=736841646]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fc48a")
 
-[node name="Slot 5 Texture" type="TextureRect" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 5" unique_id=441101308]
+[node name="Slot 5 Texture" type="TextureRect" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 5" unique_id=441101308]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_mmgws")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Global UI Margin/Item Slot VBox Container/Item Slots Container/Slot 5/Slot 5 Texture" unique_id=197669509]
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen Panel Container/Quickslot HUD Margin/Item Slot VBox Container/Item Slots Container/Slot 5/Slot 5 Texture" unique_id=197669509]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 24.0
@@ -169,8 +170,22 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=158748279]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Inventory BG Rect" type="TextureRect" parent="Screen Panel Container" unique_id=1780756334]
+visible = false
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_u3v1i")
+script = ExtResource("5_v4b62")
+
+[node name="Inventory Margin" type="MarginContainer" parent="Screen Panel Container/Inventory BG Rect" unique_id=85099389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8

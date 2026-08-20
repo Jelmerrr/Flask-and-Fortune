@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AudioEvent" format=3 uid="uid://4ap0gofrn21a"]
+
+[ext_resource type="AudioStream" uid="uid://byd73s7oumfgn" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot1.wav" id="1_5k1f6"]
+[ext_resource type="AudioStream" uid="uid://byrsm1y33i8ps" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot2.wav" id="2_3pe8w"]
+[ext_resource type="AudioStream" uid="uid://bdfpgmqjniqpw" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot3.wav" id="3_5ggu4"]
+[ext_resource type="AudioStream" uid="uid://dfl1m5l7kvbio" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot4.wav" id="4_3fwky"]
+[ext_resource type="AudioStream" uid="uid://bxc6gpoxnlda1" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot5.wav" id="5_6jmkm"]
+[ext_resource type="AudioStream" uid="uid://dk6bb2g7naq1q" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot6.wav" id="6_hewm3"]
+[ext_resource type="AudioStream" uid="uid://c8j53bimsptx4" path="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot7.wav" id="7_vavdf"]
+[ext_resource type="Script" uid="uid://egn01xe1tpij" path="res://Resources/Audio/AudioEventResource.gd" id="8_xwn7r"]
+
+[resource]
+script = ExtResource("8_xwn7r")
+eventName = "GrimoirePageTurn"
+audioFile = Array[AudioStreamWAV]([ExtResource("1_5k1f6"), ExtResource("2_3pe8w"), ExtResource("3_5ggu4"), ExtResource("4_3fwky"), ExtResource("5_6jmkm"), ExtResource("6_hewm3"), ExtResource("7_vavdf")])
+metadata/_custom_type_script = "uid://egn01xe1tpij"

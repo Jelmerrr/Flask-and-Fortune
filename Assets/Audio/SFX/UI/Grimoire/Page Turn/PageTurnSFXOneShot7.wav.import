@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8j53bimsptx4"
+path="res://.godot/imported/PageTurnSFXOneShot7.wav-4c13a75f9860c3942aad176dd1967670.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/UI/Grimoire/Page Turn/PageTurnSFXOneShot7.wav"
+dest_files=["res://.godot/imported/PageTurnSFXOneShot7.wav-4c13a75f9860c3942aad176dd1967670.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

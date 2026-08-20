@@ -36,3 +36,8 @@ enum seasons{
 	Autumn,
 	Winter,
 }
+
+enum audioEventTypes{
+	SFX,
+	Music,
+}
