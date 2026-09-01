@@ -3,14 +3,42 @@
 [ext_resource type="Script" uid="uid://boe7tymjyu24p" path="res://Scripts/UI/HotbarSlotUIController.gd" id="1_mmgws"]
 [ext_resource type="Texture2D" uid="uid://cuyxnujrd0mbu" path="res://Assets/UI/Hud/ItemHUDUnselected.png" id="2_mmgws"]
 [ext_resource type="FontFile" uid="uid://ciifp5ccg1w66" path="res://Assets/Fonts/m5x7.ttf" id="2_u3v1i"]
-[ext_resource type="Texture2D" uid="uid://cwhypu008ey84" path="res://Assets/UI/Hud/PlayerUISprite.png" id="4_u3v1i"]
-[ext_resource type="Script" uid="uid://brr6c7nhbtf8n" path="res://Scripts/UI/CraftingUIController.gd" id="5_v4b62"]
+[ext_resource type="Texture2D" uid="uid://cwhypu008ey84" path="res://Assets/UI/Hud/Grimoire/PlayerUISprite.png" id="4_u3v1i"]
+[ext_resource type="Script" uid="uid://brr6c7nhbtf8n" path="res://Scripts/UI/GrimoireUIController.gd" id="5_v4b62"]
+[ext_resource type="Script" uid="uid://cob6plxc4fy46" path="res://Scripts/UI/InventoryUIController.gd" id="6_5fowd"]
+[ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="6_gumbk"]
+[ext_resource type="FontFile" uid="uid://btjeqtspnmtnt" path="res://Assets/Fonts/supersoft.ttf" id="8_1je8v"]
+[ext_resource type="Texture2D" uid="uid://bo30pf7pm15jy" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Unselected.png" id="9_1je8v"]
+[ext_resource type="Texture2D" uid="uid://di014gft3l8ff" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Compendium.png" id="10_7ahot"]
+[ext_resource type="Texture2D" uid="uid://co87p0yuffsoi" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Selected.png" id="10_wk8kl"]
+[ext_resource type="Texture2D" uid="uid://v0onotaomycn" path="res://Assets/UI/Hud/Grimoire/Empty Container.png" id="11_wk8kl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fno7v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc48a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgwtu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd2v6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rub1x"]
+color = Color(0.83137256, 0.78431374, 0.7019608, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr3n4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_be8by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwxqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyl8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olsq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veegs"]
 
 [node name="HUD UI" type="Control" unique_id=467791142]
 layout_mode = 3
@@ -170,22 +198,332 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Inventory BG Rect" type="TextureRect" parent="Screen Panel Container" unique_id=1780756334]
-visible = false
+[node name="Grimoire BG Rect" type="TextureRect" parent="Screen Panel Container" unique_id=1780756334]
 z_index = 1
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("4_u3v1i")
 script = ExtResource("5_v4b62")
 
-[node name="Inventory Margin" type="MarginContainer" parent="Screen Panel Container/Inventory BG Rect" unique_id=85099389]
+[node name="Inventory Page Margin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect" unique_id=85099389]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 176
+theme_override_constants/margin_top = 112
+theme_override_constants/margin_right = 176
+theme_override_constants/margin_bottom = 112
+script = ExtResource("6_5fowd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin" unique_id=1761898894]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="LeftPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer" unique_id=1994228084]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vgwtu")
+
+[node name="LeftMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/LeftPage" unique_id=1923122742]
+layout_mode = 2
+
+[node name="RightPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer" unique_id=884718866]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rd2v6")
+
+[node name="RightMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage" unique_id=157836053]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin" unique_id=1764908604]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Item Name" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=155698671]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49019608, 0.4, 0.38039216, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("8_1je8v")
+theme_override_font_sizes/font_size = 32
+text = "Comfrey"
+
+[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=504750338]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rub1x")
+
+[node name="Item Description" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=1781431582]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49019608, 0.4, 0.38039216, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("8_1je8v")
+text = "Comfrey can be commonly found in temperate plains near bodies of water. The flowers give of a sweet aroma often attracting nearby wildlife. It's stalk can be ground into a fine powder which has been used in medicine for centuries."
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=622638684]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer" unique_id=1378839837]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nr3n4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer" unique_id=890265856]
+layout_mode = 2
+
+[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=2093940904]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nr3n4")
+
+[node name="Item Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=812573307]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_gumbk")
+expand_mode = 1
+
+[node name="Negative Space2" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1923892907]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nr3n4")
+
+[node name="Negative Space2" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Inventory Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer" unique_id=1886821232]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nr3n4")
+
+[node name="Crafting Page Margin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect" unique_id=1957271663]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 176
+theme_override_constants/margin_top = 112
+theme_override_constants/margin_right = 176
+theme_override_constants/margin_bottom = 112
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Crafting Page Margin" unique_id=517954682]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="LeftPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Crafting Page Margin/HBoxContainer" unique_id=168347644]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vgwtu")
+
+[node name="LeftMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Crafting Page Margin/HBoxContainer/LeftPage" unique_id=1896965409]
+layout_mode = 2
+
+[node name="RightPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Crafting Page Margin/HBoxContainer" unique_id=320798584]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rd2v6")
+
+[node name="RightMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Crafting Page Margin/HBoxContainer/RightPage" unique_id=2134871882]
+layout_mode = 2
+
+[node name="Equipment Page Margin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect" unique_id=1720834700]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 176
+theme_override_constants/margin_top = 112
+theme_override_constants/margin_right = 176
+theme_override_constants/margin_bottom = 112
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Equipment Page Margin" unique_id=1787667021]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="LeftPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Equipment Page Margin/HBoxContainer" unique_id=231804553]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vgwtu")
+
+[node name="LeftMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Equipment Page Margin/HBoxContainer/LeftPage" unique_id=191334203]
+layout_mode = 2
+
+[node name="RightPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Equipment Page Margin/HBoxContainer" unique_id=331211551]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rd2v6")
+
+[node name="RightMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Equipment Page Margin/HBoxContainer/RightPage" unique_id=544521038]
+layout_mode = 2
+
+[node name="Top icon Margin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect" unique_id=416889033]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.5
+offset_right = 113.5
+offset_bottom = 48.0
+grow_horizontal = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin" unique_id=2125056157]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer" unique_id=988718572]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Iventory Back Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer" unique_id=695254894]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+texture = ExtResource("9_1je8v")
+stretch_mode = 2
+
+[node name="Inventory Icon Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Iventory Back Texture" unique_id=1536648090]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 2
+
+[node name="InventoryButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Iventory Back Texture" unique_id=932365725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_be8by")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iwxqc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yyl8l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olsq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_veegs")
+
+[node name="Recipes Back Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer" unique_id=1872022156]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("9_1je8v")
+stretch_mode = 2
+
+[node name="Recipes Icon Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Recipes Back Texture" unique_id=2124010598]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 2
+
+[node name="RecipesButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Recipes Back Texture" unique_id=986355122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_be8by")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iwxqc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yyl8l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olsq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_veegs")
+
+[node name="Compendium Back Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer" unique_id=1177634249]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("9_1je8v")
+stretch_mode = 2
+
+[node name="Compendium Icon Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Compendium Back Texture" unique_id=227649964]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_7ahot")
+stretch_mode = 2
+
+[node name="CompendiumButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Compendium Back Texture" unique_id=241945961]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_be8by")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iwxqc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yyl8l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olsq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_veegs")
+
+[node name="Records Back Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer" unique_id=997323363]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("10_wk8kl")
+stretch_mode = 2
+
+[node name="Records Icon Texture" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Records Back Texture" unique_id=1106135137]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 2
+
+[node name="RecordsButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Records Back Texture" unique_id=644869720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_be8by")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iwxqc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yyl8l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olsq4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_veegs")
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer" unique_id=776635471]
+custom_maximum_size = Vector2(-1, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/MarginContainer" unique_id=446631378]
+layout_mode = 2
+texture = ExtResource("11_wk8kl")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/MarginContainer" unique_id=1162550554]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Category Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/MarginContainer/MarginContainer" unique_id=1099258556]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4392157, 0.5411765, 0.4745098, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("8_1je8v")
+theme_override_font_sizes/font_size = 16
+text = "Records"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Iventory Back Texture/InventoryButton" to="Screen Panel Container/Grimoire BG Rect" method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Recipes Back Texture/RecipesButton" to="Screen Panel Container/Grimoire BG Rect" method="_on_recipes_button_pressed"]
+[connection signal="pressed" from="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Compendium Back Texture/CompendiumButton" to="Screen Panel Container/Grimoire BG Rect" method="_on_compendium_button_pressed"]
+[connection signal="pressed" from="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Records Back Texture/RecordsButton" to="Screen Panel Container/Grimoire BG Rect" method="_on_records_button_pressed"]

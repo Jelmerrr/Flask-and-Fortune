@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwhypu008ey84"
-path="res://.godot/imported/PlayerUISprite.png-b4f649a1f793838e668b700b2f9990e7.ctex"
+uid="uid://bo30pf7pm15jy"
+path="res://.godot/imported/GrimoireUI Top Icon Unselected.png-418a5b45454356e5021cf3c6bab7ce9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Hud/PlayerUISprite.png"
-dest_files=["res://.godot/imported/PlayerUISprite.png-b4f649a1f793838e668b700b2f9990e7.ctex"]
+source_file="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Unselected.png"
+dest_files=["res://.godot/imported/GrimoireUI Top Icon Unselected.png-418a5b45454356e5021cf3c6bab7ce9c.ctex"]
 
 [params]
 
