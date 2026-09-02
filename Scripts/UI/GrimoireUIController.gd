@@ -37,7 +37,8 @@ func _process(delta: float) -> void:
 			AudioController.playEvent(preload("uid://4ap0gofrn21a"))
 
 func changeGrimoireCategory(category: categories):
-	AudioController.playEvent(preload("uid://4ap0gofrn21a"))
+	if self.visible:
+		AudioController.playEvent(preload("uid://4ap0gofrn21a"))
 	match category:
 		0:
 			category_label.text = "Inventory"

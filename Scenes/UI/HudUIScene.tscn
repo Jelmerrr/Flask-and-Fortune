@@ -10,8 +10,11 @@
 [ext_resource type="FontFile" uid="uid://btjeqtspnmtnt" path="res://Assets/Fonts/supersoft.ttf" id="8_1je8v"]
 [ext_resource type="Texture2D" uid="uid://bo30pf7pm15jy" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Unselected.png" id="9_1je8v"]
 [ext_resource type="Texture2D" uid="uid://di014gft3l8ff" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Compendium.png" id="10_7ahot"]
+[ext_resource type="Texture2D" uid="uid://bto5piuj6kfma" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Recipes.png" id="10_qdki7"]
 [ext_resource type="Texture2D" uid="uid://co87p0yuffsoi" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Selected.png" id="10_wk8kl"]
+[ext_resource type="Texture2D" uid="uid://dk2tu5p03gu54" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Inventory.png" id="10_xqj2r"]
 [ext_resource type="Texture2D" uid="uid://v0onotaomycn" path="res://Assets/UI/Hud/Grimoire/Empty Container.png" id="11_wk8kl"]
+[ext_resource type="Texture2D" uid="uid://ckqs2cm0u0hfk" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Records.png" id="13_kakyk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
 
@@ -399,6 +402,7 @@ custom_maximum_size = Vector2(32, 32)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("10_xqj2r")
 stretch_mode = 2
 
 [node name="InventoryButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Iventory Back Texture" unique_id=932365725]
@@ -425,6 +429,7 @@ custom_maximum_size = Vector2(32, 32)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("10_qdki7")
 stretch_mode = 2
 
 [node name="RecipesButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Recipes Back Texture" unique_id=986355122]
@@ -478,6 +483,7 @@ custom_maximum_size = Vector2(32, 32)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("13_kakyk")
 stretch_mode = 2
 
 [node name="RecordsButton" type="Button" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/HBoxContainer/Records Back Texture" unique_id=644869720]
@@ -516,7 +522,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Category Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Top icon Margin/VBoxContainer/MarginContainer/MarginContainer" unique_id=1099258556]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4392157, 0.5411765, 0.4745098, 1)
+theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
 theme_override_constants/line_spacing = -2
 theme_override_fonts/font = ExtResource("8_1je8v")
 theme_override_font_sizes/font_size = 16
