@@ -13,3 +13,7 @@ signal isOutside(bool) #Emit this whenever the player changes from inside to out
 
 #UI based signals
 signal changeSelectedHotbarSlotUI()
+signal updateCompendiumRightPageText(item: ItemResource)
+
+#Item based signals
+signal gainKnowledgeOfItem(item: ItemResource)

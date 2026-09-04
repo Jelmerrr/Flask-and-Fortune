@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ijdsiogsvex5"]
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ijdsiogsvex5"]
 
-[ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="1_kecw8"]
+[ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/Comfrey/ComfreyItemSprite32x32.png" id="1_a8hud"]
+[ext_resource type="Texture2D" uid="uid://dx4qhybyk7m7a" path="res://Assets/Sprites/Item Sprites/Comfrey/ComfreyItemSprite32x32Unrevealed.png" id="2_5858h"]
 [ext_resource type="Script" uid="uid://i7xrlwuwu02f" path="res://Resources/Items/ItemResource.gd" id="2_a8hud"]
 
 [resource]
 script = ExtResource("2_a8hud")
 itemName = "Comfrey"
 itemDescription = "Comfrey can be commonly found in temperate plains near bodies of water. The flowers give of a sweet aroma often attracting nearby wildlife. It's stalk can be ground into a fine powder which has been used in medicine for centuries."
-itemTexture = ExtResource("1_kecw8")
+itemTexture = ExtResource("1_a8hud")
+itemTextureUnrevealed = ExtResource("2_5858h")
 metadata/_custom_type_script = "uid://i7xrlwuwu02f"

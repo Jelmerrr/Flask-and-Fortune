@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c310v47bisfne"
-path="res://.godot/imported/ItemSpriteFrame32x32.png-67662d2d5cb57b0b010209c4e8f341fc.ctex"
+uid="uid://cmrlaopl4gely"
+path="res://.godot/imported/ComfreyItemSprite32x32.png-2fe60b7d205ba4c43b693533d19919ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Item Sprites/ItemSpriteFrame32x32.png"
-dest_files=["res://.godot/imported/ItemSpriteFrame32x32.png-67662d2d5cb57b0b010209c4e8f341fc.ctex"]
+source_file="res://Assets/Sprites/Item Sprites/Comfrey/ComfreyItemSprite32x32.png"
+dest_files=["res://.godot/imported/ComfreyItemSprite32x32.png-2fe60b7d205ba4c43b693533d19919ba.ctex"]
 
 [params]
 

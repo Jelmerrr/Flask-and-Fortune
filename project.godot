@@ -34,6 +34,7 @@ GlobalCraftingHandler="*res://Scripts/Crafting/GlobalCraftingHandler.gd"
 GlobalTimeOfDayController="*res://Scripts/CoreUtils/Globals/GlobalTimeOfDayController.gd"
 GlobalWeatherController="*res://Scripts/CoreUtils/Globals/GlobalWeatherController.gd"
 GlobalSignalBus="*res://Scripts/CoreUtils/Globals/GlobalSignalBus.gd"
+GlobalItemDatabase="*uid://bukg02o2hbsae"
 
 [display]
 

@@ -12,6 +12,9 @@ func addItems(item: ItemResource, inventoryReference: Inventory, amount: int) ->
 		slot.amount += amount
 	else:
 		inventoryReference.inventory.append(new_slot(item, amount))
+	if !item.playerHasKnowledgeOfItem:
+		item.playerHasKnowledgeOfItem = true
+		GlobalSignalBus.gainKnowledgeOfItem.emit(item)
 
 func removeItems(item: ItemResource, inventoryReference: Inventory, amount: int) -> void:
 	#Removes item of defined amount to referenced inventory

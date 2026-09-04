@@ -6,13 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cwhypu008ey84" path="res://Assets/UI/Hud/Grimoire/PlayerUISprite.png" id="4_u3v1i"]
 [ext_resource type="Script" uid="uid://brr6c7nhbtf8n" path="res://Scripts/UI/GrimoireUIController.gd" id="5_v4b62"]
 [ext_resource type="Script" uid="uid://cob6plxc4fy46" path="res://Scripts/UI/InventoryUIController.gd" id="6_5fowd"]
-[ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/ComfreyItemSprite32x32.png" id="6_gumbk"]
-[ext_resource type="Texture2D" uid="uid://44kn2n173jqa" path="res://Assets/UI/Hud/Grimoire/GrimoireItemUISlot.png" id="7_u1e8r"]
+[ext_resource type="Script" uid="uid://dacemi813ef3u" path="res://Scripts/UI/Grimoire Compendium/CompendiumController.gd" id="7_5hk1d"]
 [ext_resource type="FontFile" uid="uid://btjeqtspnmtnt" path="res://Assets/Fonts/supersoft.ttf" id="8_1je8v"]
 [ext_resource type="Theme" uid="uid://bh2bafnr5wxt0" path="res://Assets/Themes/GrimoireBasicTextTheme.tres" id="8_u1e8r"]
 [ext_resource type="Theme" uid="uid://d1wbovvcwvnrk" path="res://Assets/Themes/GrimoireScrollContainerTheme.tres" id="8_vxclo"]
 [ext_resource type="Texture2D" uid="uid://bo30pf7pm15jy" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Unselected.png" id="9_1je8v"]
-[ext_resource type="Texture2D" uid="uid://blv3c2sjdg70f" path="res://Assets/Sprites/World Object Sprites/Clutter/Bushes/Sunberry/1/SunberrySprite1.png" id="10_5hk1d"]
 [ext_resource type="Texture2D" uid="uid://di014gft3l8ff" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Compendium.png" id="10_7ahot"]
 [ext_resource type="Texture2D" uid="uid://bto5piuj6kfma" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Recipes.png" id="10_qdki7"]
 [ext_resource type="Texture2D" uid="uid://co87p0yuffsoi" path="res://Assets/UI/Hud/Grimoire/GrimoireUI Top Icon Selected.png" id="10_wk8kl"]
@@ -51,10 +49,6 @@ color = Color(0.83137256, 0.78431374, 0.7019608, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tmql"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2btjj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqj4v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thc3r"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_fno7v"]
 color = Color(0.38039216, 0.4392157, 0.38431373, 1)
@@ -319,6 +313,7 @@ theme_override_constants/margin_left = 176
 theme_override_constants/margin_top = 112
 theme_override_constants/margin_right = 176
 theme_override_constants/margin_bottom = 112
+script = ExtResource("7_5hk1d")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin" unique_id=1787667021]
 layout_mode = 2
@@ -332,415 +327,95 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_vgwtu")
 [node name="LeftMargin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage" unique_id=191334203]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin" unique_id=1552100799]
+[node name="GlobalPageVbox" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin" unique_id=1552100799]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Compendium item master container" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2" unique_id=831773703]
+[node name="Compendium item master container" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox" unique_id=831773703]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_cu1i8")
 
-[node name="Outline panel" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container" unique_id=439917492]
+[node name="Outline panel" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container" unique_id=439917492]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ks831")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel" unique_id=1185836488]
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel" unique_id=1185836488]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel/HBoxContainer" unique_id=1130014992]
+[node name="PanelContainer" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel/HBoxContainer" unique_id=1130014992]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0xr0w")
 
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel/HBoxContainer" unique_id=938060245]
+[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel/HBoxContainer" unique_id=938060245]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_fc48a")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel" unique_id=100222619]
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel" unique_id=100222619]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel/VBoxContainer" unique_id=830465032]
+[node name="PanelContainer" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel/VBoxContainer" unique_id=830465032]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u28y8")
 
-[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/Outline panel/VBoxContainer" unique_id=946782942]
+[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/Outline panel/VBoxContainer" unique_id=946782942]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_vgwtu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container" unique_id=2124951445]
+[node name="CategoryAndItems Vbox" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container" unique_id=2124951445]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer" unique_id=1020455819]
+[node name="Top Text Hbox" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox" unique_id=1020455819]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Offset" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/HBoxContainer" unique_id=1508165082]
+[node name="Offset" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox/Top Text Hbox" unique_id=1508165082]
 custom_minimum_size = Vector2(64, 24)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_luwlh")
 
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/HBoxContainer" unique_id=771884513]
+[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox/Top Text Hbox" unique_id=771884513]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_1tmql")
 
-[node name="CategoryLabel" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/HBoxContainer" unique_id=1105594418]
+[node name="CategoryLabel" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox/Top Text Hbox" unique_id=1105594418]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("8_u1e8r")
 theme_override_font_sizes/font_size = 32
 text = "Organics"
 
-[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer" unique_id=770455703]
+[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox" unique_id=770455703]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2btjj")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer" unique_id=617225463]
+[node name="ScrollContainer" type="ScrollContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox" unique_id=617225463]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_vxclo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer" unique_id=211595237]
+[node name="Item Entry Vbox" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Compendium item master container/CategoryAndItems Vbox/ScrollContainer" unique_id=211595237]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1601034274]
+[node name="Bottom Area" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox" unique_id=4012544]
 layout_mode = 2
 
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=932269989]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=424750475]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/TextureRect" unique_id=716977682]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1936577474]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1099505450]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "Comfrey"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1894245598]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=558021989]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=2122354646]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureRect" unique_id=1168389983]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=427151579]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1003673002]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=521873267]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1499433888]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=22250536]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4/TextureRect" unique_id=994539615]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, -2)
-texture = ExtResource("10_5hk1d")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1976283155]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=842169220]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "Sunberry"
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1632453681]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1619240206]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1503714493]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5/TextureRect" unique_id=859088835]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1498063443]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=2116499476]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1776015110]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=662188441]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1094042463]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6/TextureRect" unique_id=102553866]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1116380227]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=913526350]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=385905760]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=2050653952]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=2146377012]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7/TextureRect" unique_id=1142078247]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1391159243]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1532628004]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=873130939]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=222409929]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=238836311]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8/TextureRect" unique_id=582139978]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1659956425]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1917788032]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=840072836]
-layout_mode = 2
-
-[node name="Negative Space" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=897970216]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1864654154]
-layout_mode = 2
-texture = ExtResource("7_u1e8r")
-stretch_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/TextureRect" unique_id=299907110]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_gumbk")
-stretch_mode = 3
-
-[node name="VSeparator" type="VSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1367853838]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
-
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/Compendium item master container/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1247534997]
-layout_mode = 2
-theme = ExtResource("8_u1e8r")
-theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
-text = "? ? ?"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2" unique_id=4012544]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/VBoxContainer" unique_id=2095201354]
+[node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Bottom Area" unique_id=2095201354]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_fno7v")
 
-[node name="Label" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/VBoxContainer2/VBoxContainer" unique_id=906924955]
+[node name="Collection Log" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Bottom Area" unique_id=906924955]
 layout_mode = 2
 theme = ExtResource("8_u1e8r")
-text = "Collection log: 2 / 99"
+text = "Collection log:"
 horizontal_alignment = 1
 
 [node name="RightPage" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer" unique_id=331211551]
@@ -759,7 +434,6 @@ theme_override_constants/separation = 4
 layout_mode = 2
 theme = ExtResource("8_u1e8r")
 theme_override_font_sizes/font_size = 32
-text = "Comfrey"
 
 [node name="HSeparator" type="HSeparator" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=644808417]
 layout_mode = 2
@@ -768,7 +442,6 @@ theme_override_styles/separator = SubResource("StyleBoxLine_rub1x")
 [node name="Item Description" type="Label" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=1215713222]
 layout_mode = 2
 theme = ExtResource("8_u1e8r")
-text = "Comfrey can be commonly found in temperate plains near bodies of water. The flowers give of a sweet aroma often attracting nearby wildlife. It's stalk can be ground into a fine powder which has been used in medicine for centuries."
 autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer" unique_id=1256369070]
@@ -793,7 +466,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_nr3n4")
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_gumbk")
 expand_mode = 1
 
 [node name="Negative Space2" type="PanelContainer" parent="Screen Panel Container/Grimoire BG Rect/Compendium Page Margin/HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1240891069]

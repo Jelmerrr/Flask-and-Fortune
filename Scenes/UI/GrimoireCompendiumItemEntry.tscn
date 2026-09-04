@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://btltdlmdm271c"]
+
+[ext_resource type="Script" uid="uid://c4snvxdci34ql" path="res://Scripts/UI/Grimoire Compendium/CompendiumItemEntryController.gd" id="1_oayy0"]
+[ext_resource type="Texture2D" uid="uid://44kn2n173jqa" path="res://Assets/UI/Hud/Grimoire/GrimoireItemUISlot.png" id="2_l8nkc"]
+[ext_resource type="Theme" uid="uid://bh2bafnr5wxt0" path="res://Assets/Themes/GrimoireBasicTextTheme.tres" id="3_52try"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqj4v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rub1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgwtu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd2v6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc48a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fno7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thc3r"]
+
+[node name="CompendiumItemEntry" type="HBoxContainer" unique_id=1323754366]
+script = ExtResource("1_oayy0")
+
+[node name="Negative Space" type="PanelContainer" parent="." unique_id=1681218234]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
+
+[node name="Background Texture" type="TextureRect" parent="." unique_id=505323505]
+layout_mode = 2
+texture = ExtResource("2_l8nkc")
+stretch_mode = 3
+
+[node name="Item Icon" type="TextureRect" parent="Background Texture" unique_id=1377070728]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="SelectionButton" type="Button" parent="Background Texture/Item Icon" unique_id=1571855032]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rub1x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vgwtu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rd2v6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fc48a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fno7v")
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=1982587520]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
+
+[node name="Item Name" type="Label" parent="." unique_id=1443168085]
+layout_mode = 2
+theme = ExtResource("3_52try")
+theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
+text = "? ? ?"
+
+[connection signal="pressed" from="Background Texture/Item Icon/SelectionButton" to="." method="_on_selection_button_pressed"]
