@@ -9,6 +9,10 @@ extends TextureRect
 @onready var recipes_button: Button = $"Top icon Margin/VBoxContainer/HBoxContainer/Recipes Back Texture/RecipesButton"
 @onready var compendium_button: Button = $"Top icon Margin/VBoxContainer/HBoxContainer/Compendium Back Texture/CompendiumButton"
 @onready var records_button: Button = $"Top icon Margin/VBoxContainer/HBoxContainer/Records Back Texture/RecordsButton"
+@onready var inventory_page_margin: MarginContainer = $"Inventory Page Margin"
+@onready var recipes_page_margin: MarginContainer = $"Recipes Page Margin"
+@onready var compendium_page_margin: MarginContainer = $"Compendium Page Margin"
+@onready var records_page_margin: MarginContainer = $"Records Page Margin"
 
 const GRIMOIRE_UI_TOP_ICON_SELECTED = preload("uid://co87p0yuffsoi")
 const GRIMOIRE_UI_TOP_ICON_UNSELECTED = preload("uid://bo30pf7pm15jy")
@@ -29,7 +33,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if self.visible: mouse_filter = Control.MOUSE_FILTER_IGNORE
-	else: mouse_filter = Control.MOUSE_FILTER_PASS
+	else: mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	if Input.is_action_just_pressed("Open_Grimoire"):
 		self.visible = !self.visible
@@ -46,24 +50,40 @@ func changeGrimoireCategory(category: categories):
 			deselectTopIcon(recipes_back_texture)
 			deselectTopIcon(compendium_back_texture)
 			deselectTopIcon(records_back_texture)
+			inventory_page_margin.visible = true
+			recipes_page_margin.visible = false
+			compendium_page_margin.visible = false
+			records_page_margin.visible = false
 		1:
 			category_label.text = "Recipes"
 			deselectTopIcon(iventory_back_texture)
 			selectTopIcon(recipes_back_texture)
 			deselectTopIcon(compendium_back_texture)
 			deselectTopIcon(records_back_texture)
+			inventory_page_margin.visible = false
+			recipes_page_margin.visible = true
+			compendium_page_margin.visible = false
+			records_page_margin.visible = false
 		2:
 			category_label.text = "Compendium"
 			deselectTopIcon(iventory_back_texture)
 			deselectTopIcon(recipes_back_texture)
 			selectTopIcon(compendium_back_texture)
 			deselectTopIcon(records_back_texture)
+			inventory_page_margin.visible = false
+			recipes_page_margin.visible = false
+			compendium_page_margin.visible = true
+			records_page_margin.visible = false
 		3:
 			category_label.text = "Records"
 			deselectTopIcon(iventory_back_texture)
 			deselectTopIcon(recipes_back_texture)
 			deselectTopIcon(compendium_back_texture)
 			selectTopIcon(records_back_texture)
+			inventory_page_margin.visible = false
+			recipes_page_margin.visible = false
+			compendium_page_margin.visible = false
+			records_page_margin.visible = true
 
 func deselectTopIcon(backTexture: TextureRect):
 	backTexture.texture = GRIMOIRE_UI_TOP_ICON_UNSELECTED

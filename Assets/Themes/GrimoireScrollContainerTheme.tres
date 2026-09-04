@@ -1,0 +1,88 @@
+[gd_resource type="Theme" format=3 uid="uid://d1wbovvcwvnrk"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_6hj58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkaxe"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7411765, 0.6745098, 0.6156863, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jujq8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.83137256, 0.78431374, 0.7019608, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8hbb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18gwh"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhxdk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kifhg"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.57254905, 0.49019608, 0.46666667, 1)
+anti_aliasing = false
+
+[resource]
+HScrollBar/icons/decrement = SubResource("ImageTexture_6hj58")
+HScrollBar/icons/decrement_highlight = SubResource("ImageTexture_6hj58")
+HScrollBar/icons/decrement_pressed = SubResource("ImageTexture_6hj58")
+HScrollBar/icons/increment = SubResource("ImageTexture_6hj58")
+HScrollBar/icons/increment_highlight = SubResource("ImageTexture_6hj58")
+HScrollBar/icons/increment_pressed = SubResource("ImageTexture_6hj58")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_hkaxe")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jujq8")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_p8hbb")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_18gwh")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_bhxdk")
+VScrollBar/icons/decrement = SubResource("ImageTexture_6hj58")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_6hj58")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_6hj58")
+VScrollBar/icons/increment = SubResource("ImageTexture_6hj58")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_6hj58")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_6hj58")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_hkaxe")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jujq8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_p8hbb")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_kifhg")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_bhxdk")

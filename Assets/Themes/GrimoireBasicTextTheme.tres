@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://bh2bafnr5wxt0"]
+
+[ext_resource type="FontFile" uid="uid://btjeqtspnmtnt" path="res://Assets/Fonts/supersoft.ttf" id="1_l52kh"]
+
+[resource]
+Label/colors/font_color = Color(0.49019608, 0.4, 0.38039216, 1)
+Label/constants/line_spacing = -2
+Label/fonts/font = ExtResource("1_l52kh")
+RichTextLabel/colors/default_color = Color(0.49019608, 0.4, 0.38039216, 1)
+RichTextLabel/constants/line_separation = -2
+RichTextLabel/fonts/bold_font = ExtResource("1_l52kh")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_l52kh")
+RichTextLabel/fonts/italics_font = ExtResource("1_l52kh")
+RichTextLabel/fonts/mono_font = ExtResource("1_l52kh")
+RichTextLabel/fonts/normal_font = ExtResource("1_l52kh")
+TextEdit/fonts/font = null
