@@ -4,8 +4,9 @@ extends MarginContainer
 @onready var collection_log: Label = $"HBoxContainer/LeftPage/LeftMargin/GlobalPageVbox/Bottom Area/Collection Log"
 
 @onready var item_name: Label = $"HBoxContainer/RightPage/RightMargin/VBoxContainer/Item Name"
-@onready var item_description: Label = $"HBoxContainer/RightPage/RightMargin/VBoxContainer/Item Description"
+@onready var item_description: Label = $"HBoxContainer/RightPage/RightMargin/VBoxContainer/Description Container/MarginContainer/Item Description"
 @onready var item_texture: TextureRect = $"HBoxContainer/RightPage/RightMargin/VBoxContainer/VBoxContainer/HBoxContainer/Item Texture"
+@onready var description_rect: NinePatchRect = $"HBoxContainer/RightPage/RightMargin/VBoxContainer/Description Container/NinePatchRect2"
 
 
 var baseLogColor: Color = Color("7d6661")
@@ -40,4 +41,6 @@ func updateRightPage(item: ItemResource):
 		item_name.text = item.itemName
 		item_description.text = item.itemDescription
 		item_texture.texture = item.itemTexture
+		if item_description.text != "":
+			description_rect.visible = true
 		AudioController.playEvent(preload("uid://4ap0gofrn21a"))

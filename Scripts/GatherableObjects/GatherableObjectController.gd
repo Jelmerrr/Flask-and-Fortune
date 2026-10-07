@@ -59,7 +59,7 @@ func GatherResource() -> void:
 	#Add those items to the inventory
 	for item in gatherResult:
 		GlobalSignalBus.addItems.emit(item, UtilsGlobalVariables.playerDataRef.inventoryRef, gatherResult[item])
-	GlobalIventoryHandler.printInventory(UtilsGlobalVariables.playerDataRef.inventoryRef)
+	GlobalInventoryHandler.printInventory(UtilsGlobalVariables.playerDataRef.inventoryRef)
 	#Hide object from scene and stop calculating distance checks
 	harvestable = false
 	gather_object_sprite.visible = false

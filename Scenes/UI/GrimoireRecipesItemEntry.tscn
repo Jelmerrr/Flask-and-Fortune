@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cs6hfuc4jo5qs"]
+
+[ext_resource type="Script" uid="uid://by2uvomikcuox" path="res://Scripts/UI/Grimoire Recipes/RecipesItemEntry.gd" id="1_7wq6a"]
+[ext_resource type="Texture2D" uid="uid://44kn2n173jqa" path="res://Assets/UI/Hud/Grimoire/GrimoireItemUISlot.png" id="2_luadm"]
+[ext_resource type="Theme" uid="uid://bh2bafnr5wxt0" path="res://Assets/Themes/GrimoireBasicTextTheme.tres" id="3_esxv0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqj4v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr3n4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_be8by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwxqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyl8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olsq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thc3r"]
+
+[node name="RecipesItemEntry" type="HBoxContainer" unique_id=1323754366]
+script = ExtResource("1_7wq6a")
+
+[node name="Negative Space" type="PanelContainer" parent="." unique_id=1681218234]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dqj4v")
+
+[node name="Background Texture" type="TextureRect" parent="." unique_id=505323505]
+layout_mode = 2
+texture = ExtResource("2_luadm")
+stretch_mode = 3
+
+[node name="Item Icon" type="TextureRect" parent="Background Texture" unique_id=1377070728]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="Selection Button" type="Button" parent="Background Texture/Item Icon" unique_id=1307522339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nr3n4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_be8by")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iwxqc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yyl8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_olsq4")
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=1982587520]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_thc3r")
+
+[node name="Item Name" type="Label" parent="." unique_id=1443168085]
+layout_mode = 2
+theme = ExtResource("3_esxv0")
+theme_override_colors/font_color = Color(0.38039216, 0.4392157, 0.38431373, 1)
+text = "? ? ?"
+
+[connection signal="pressed" from="Background Texture/Item Icon/Selection Button" to="." method="_on_selection_button_pressed"]

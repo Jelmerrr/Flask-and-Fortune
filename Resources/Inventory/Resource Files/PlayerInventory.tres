@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://do7r2r8ngpjhc"]
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://do7r2r8ngpjhc"]
 
 [ext_resource type="Script" uid="uid://bvkm1krp5pwkh" path="res://Resources/Inventory/InventorySlotResource.gd" id="1_5aywx"]
 [ext_resource type="Script" uid="uid://dk1jn3oqssc6m" path="res://Resources/Inventory/IventoryResource.gd" id="2_tdvhe"]
 
 [resource]
 script = ExtResource("2_tdvhe")
+maxSlots = 25
+maxWeight = 100.0
 metadata/_custom_type_script = "uid://dk1jn3oqssc6m"

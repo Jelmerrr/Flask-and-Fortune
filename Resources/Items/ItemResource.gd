@@ -9,3 +9,4 @@ class_name  ItemResource
 @export var itemTextureUnrevealed: Texture2D
 @export var playerHasKnowledgeOfItem: bool = false
 @export var itemRarity: UtilsGlobalEnums.itemRarity
+@export var itemWeight: float

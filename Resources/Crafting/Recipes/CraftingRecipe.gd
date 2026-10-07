@@ -8,3 +8,5 @@ class_name CraftingRecipe
 @export var station: CraftingStations
 @export var craftingTime: float
 @export var recipeName: String
+@export var hasKnowledgeOfIngredients: bool
+@export var hasKnowledgeOfFullRecipe: bool

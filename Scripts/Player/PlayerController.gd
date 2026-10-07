@@ -9,6 +9,7 @@ var accel = 16 #Acceleration in pixel/sec
 
 func _ready() -> void:
 	UtilsGlobalVariables.currentPlayerState = UtilsGlobalEnums.playerState.Free
+	GlobalInventoryHandler.generateInventory(UtilsGlobalVariables.playerDataRef.inventoryRef)
 
 func _physics_process(delta):
 	if UtilsGlobalVariables.currentPlayerState == UtilsGlobalEnums.playerState.Free:

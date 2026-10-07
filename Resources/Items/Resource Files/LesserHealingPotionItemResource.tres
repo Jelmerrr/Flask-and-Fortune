@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bic5busq6fm2s"]
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://bic5busq6fm2s"]
 
+[ext_resource type="Texture2D" uid="uid://cmrlaopl4gely" path="res://Assets/Sprites/Item Sprites/Comfrey/ComfreyItemSprite32x32.png" id="1_43ntv"]
 [ext_resource type="Script" uid="uid://i7xrlwuwu02f" path="res://Resources/Items/ItemResource.gd" id="1_xynql"]
+[ext_resource type="Texture2D" uid="uid://dx4qhybyk7m7a" path="res://Assets/Sprites/Item Sprites/Comfrey/ComfreyItemSprite32x32Unrevealed.png" id="2_5sle5"]
 
 [resource]
 script = ExtResource("1_xynql")
 itemName = "Lesser Healing Potion"
 itemCategory = 2
+itemTexture = ExtResource("1_43ntv")
+itemTextureUnrevealed = ExtResource("2_5sle5")
+itemWeight = 5.0
 metadata/_custom_type_script = "uid://i7xrlwuwu02f"

@@ -64,6 +64,7 @@ func changeGrimoireCategory(category: categories):
 			recipes_page_margin.visible = true
 			compendium_page_margin.visible = false
 			records_page_margin.visible = false
+			GlobalSignalBus.updateRecipeBook.emit()
 		2:
 			category_label.text = "Compendium"
 			deselectTopIcon(iventory_back_texture)

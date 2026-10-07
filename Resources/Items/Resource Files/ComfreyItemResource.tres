@@ -10,4 +10,5 @@ itemName = "Comfrey"
 itemDescription = "Comfrey can be commonly found in temperate plains near bodies of water. The flowers give of a sweet aroma often attracting nearby wildlife. It's stalk can be ground into a fine powder which has been used in medicine for centuries."
 itemTexture = ExtResource("1_a8hud")
 itemTextureUnrevealed = ExtResource("2_5858h")
+itemWeight = 0.2
 metadata/_custom_type_script = "uid://i7xrlwuwu02f"
