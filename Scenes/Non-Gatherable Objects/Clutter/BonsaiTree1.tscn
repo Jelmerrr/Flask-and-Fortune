@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dajnvrvcsl7cm"]
+[gd_scene format=3 uid="uid://dajnvrvcsl7cm"]
 
 [ext_resource type="Shader" uid="uid://dcv8xv4qq5aao" path="res://Shaders/Sprite Processing Shaders/WindShader.gdshader" id="1_lcb4b"]
 [ext_resource type="Texture2D" uid="uid://upwk66jhx4ky" path="res://Assets/Sprites/World Object Sprites/Clutter/Pots & Plants/Potted Plant Clutter 1.png" id="2_ph10a"]
@@ -21,15 +21,18 @@ shader_parameter/rotation_pivot = Vector2(0.5, 0.8)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcb4b"]
 radius = 4.0
 
-[node name="Bonsai Tree 1" type="Node2D"]
+[node name="Bonsai Tree 1" type="Node2D" unique_id=1183477800]
+y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589773085]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_8wqq2")
+position = Vector2(0, -8)
 texture = ExtResource("2_ph10a")
-offset = Vector2(0, -30)
+offset = Vector2(0, -22)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1615177330]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1057065753]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_lcb4b")

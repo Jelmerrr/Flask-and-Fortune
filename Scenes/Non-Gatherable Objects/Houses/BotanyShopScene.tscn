@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dqgngj2qo3faw"]
+
+[ext_resource type="Texture2D" uid="uid://ba3u15bxub24h" path="res://Assets/Sprites/World Object Sprites/Buildings/BotanyShopHouse.png" id="1_ajc3f"]
+[ext_resource type="Texture2D" uid="uid://cqwxxvjrn42kf" path="res://Assets/Lighting/512x512 textures (61).png" id="2_apsbd"]
+[ext_resource type="Script" uid="uid://dquvisnyqqvsc" path="res://Scripts/Visual/Lighting/PointLightController.gd" id="3_apikl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rub1x"]
+size = Vector2(236, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgwtu"]
+size = Vector2(95, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajc3f"]
+size = Vector2(29, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apsbd"]
+size = Vector2(29, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kv3hk"]
+radius = 5.0
+
+[node name="Botany Shop" type="Node2D" unique_id=108483838]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515540680]
+y_sort_enabled = true
+position = Vector2(0, 158)
+texture = ExtResource("1_ajc3f")
+offset = Vector2(0, -158)
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=187345433]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=1757481914]
+position = Vector2(-33, 98)
+shape = SubResource("RectangleShape2D_rub1x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions" unique_id=1011336216]
+position = Vector2(132, 96)
+shape = SubResource("RectangleShape2D_vgwtu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions" unique_id=1570031592]
+position = Vector2(-29.5, 168)
+shape = SubResource("RectangleShape2D_ajc3f")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions" unique_id=318146348]
+position = Vector2(27.5, 168)
+shape = SubResource("RectangleShape2D_ajc3f")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Collisions" unique_id=1334396047]
+position = Vector2(-0.5, 166)
+shape = SubResource("RectangleShape2D_apsbd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions" unique_id=487341594]
+position = Vector2(-39, 166)
+shape = SubResource("CapsuleShape2D_kv3hk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions" unique_id=512024186]
+position = Vector2(39, 166)
+shape = SubResource("CapsuleShape2D_kv3hk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions" unique_id=492407217]
+position = Vector2(89, 166)
+shape = SubResource("CapsuleShape2D_kv3hk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions" unique_id=1624055393]
+position = Vector2(175, 166)
+shape = SubResource("CapsuleShape2D_kv3hk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions" unique_id=1819849101]
+position = Vector2(-146, 161)
+shape = SubResource("CapsuleShape2D_kv3hk")
+
+[node name="Lights" type="Node2D" parent="." unique_id=1947668766]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=923300375]
+position = Vector2(132, 80)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+texture = ExtResource("2_apsbd")
+texture_scale = 0.4
+script = ExtResource("3_apikl")
+isDeterminedByDayNightCycle = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights" unique_id=198125506]
+position = Vector2(64, 141)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+texture = ExtResource("2_apsbd")
+texture_scale = 0.25
+script = ExtResource("3_apikl")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights" unique_id=184302947]
+position = Vector2(0, 147)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+texture = ExtResource("2_apsbd")
+texture_scale = 0.25
+script = ExtResource("3_apikl")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights" unique_id=837329792]
+position = Vector2(-63, 141)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+texture = ExtResource("2_apsbd")
+texture_scale = 0.25
+script = ExtResource("3_apikl")
+isDeterminedByDayNightCycle = true
+maxEnergy = 0.8
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights" unique_id=1256415066]
+position = Vector2(-93, 141)
+color = Color(0.8880632, 0.7464715, 0.4535032, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+texture = ExtResource("2_apsbd")
+texture_scale = 0.5
+script = ExtResource("3_apikl")
+isDeterminedByDayNightCycle = true
+maxEnergy = 1.2

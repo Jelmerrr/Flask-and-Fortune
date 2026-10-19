@@ -368,6 +368,7 @@ theme = ExtResource("8_u1e8r")
 horizontal_alignment = 2
 
 [node name="Grimoire BG Rect" type="TextureRect" parent="Screen Panel Container" unique_id=1780756334]
+visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
@@ -737,6 +738,7 @@ theme = ExtResource("8_u1e8r")
 text = "Requires Station:"
 
 [node name="Compendium Page Margin" type="MarginContainer" parent="Screen Panel Container/Grimoire BG Rect" unique_id=1720834700]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
